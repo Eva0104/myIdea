@@ -1,18 +1,16 @@
 package com.zhuxiaoxue.entity;
 
 public class User {
-    private String name;
     private Integer id;
+    private String name;
     private String address;
     private String tel;
 
-    public String getName() {
-
-        return name;
-    }
-
-    public void setName(String name) {
+    public User(){}
+    public User(String name, String address, String tel) {
         this.name = name;
+        this.tel = tel;
+        this.address = address;
     }
 
     public Integer getId() {
@@ -21,6 +19,14 @@ public class User {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getAddress() {
@@ -42,8 +48,8 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "name='" + name + '\'' +
-                ", id=" + id +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", tel='" + tel + '\'' +
                 '}';
