@@ -4,7 +4,6 @@ import com.zhuxiaoxue.util.ConnectionManager;
 import com.zhuxiaoxue.util.DbHelper;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.*;
-import org.junit.Assert;
 import org.junit.Test;
 
 import java.sql.Connection;

@@ -4,12 +4,13 @@ import com.zhuxiaoxue.entity.User;
 import com.zhuxiaoxue.util.DbHelper;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+
 import java.util.List;
 
 public class UserDAO {
     public void save(User user) {
         String sql = "insert into student (name,address,tel) values (?,?,?)";
-        DbHelper.update(sql,user.getName(),user.getAddress(),user.getTel());
+        DbHelper.update(sql, user.getName(), user.getAddress(), user.getTel());
     }
 
     public void updateById(String name, Integer id) {

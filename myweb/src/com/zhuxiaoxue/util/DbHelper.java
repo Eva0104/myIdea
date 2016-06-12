@@ -1,9 +1,7 @@
 package com.zhuxiaoxue.util;
-
 import com.zhuxiaoxue.exception.DataAccessException;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.ResultSetHandler;
-
 import java.sql.Connection;
 import java.sql.SQLException;
 

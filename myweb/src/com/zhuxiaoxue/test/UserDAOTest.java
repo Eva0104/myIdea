@@ -1,12 +1,9 @@
 package com.zhuxiaoxue.test;
-
 import com.zhuxiaoxue.dao.UserDAO;
 import com.zhuxiaoxue.entity.User;
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.List;
-
 public class UserDAOTest {
     UserDAO dao = new UserDAO();
     @Test
@@ -16,11 +13,11 @@ public class UserDAOTest {
     }
     @Test
     public void testUpdateById(){
-        dao.updateById("秦始皇",13);
+        dao.updateById("武则天",12);
     }
     @Test
     public void testDeleteById(){
-        dao.deleteById(5);
+        dao.deleteById(8);
     }
     @Test
     public void testQueryById(){
