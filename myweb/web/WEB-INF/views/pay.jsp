@@ -4,7 +4,8 @@
     <title>Title</title>
 </head>
 <body>
-    <form method="post" action="/pay" >
+    <form method="post" action="/pay">
+        <input type="hidden" name="token" value="${requestScope.token}">
         <input type="text" name="money">
         <button>支付</button>
     </form>
