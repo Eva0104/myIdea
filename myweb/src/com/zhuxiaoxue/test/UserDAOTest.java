@@ -13,11 +13,11 @@ public class UserDAOTest {
     }
     @Test
     public void testUpdateById(){
-        dao.updateById("武则天",12);
+        dao.updateById("Tom",4);
     }
     @Test
     public void testDeleteById(){
-        dao.deleteById(8);
+        dao.deleteById(6);
     }
     @Test
     public void testQueryById(){

@@ -12,9 +12,6 @@ public class ConnectionManager {
 
     private static BasicDataSource dataSource = new BasicDataSource();
 
-
-
-
     static {
         Properties properties = new Properties();
 
@@ -29,18 +26,22 @@ public class ConnectionManager {
         dataSource.setUsername(properties.getProperty("jdbc.username"));
         dataSource.setPassword(properties.getProperty("jdbc.password"));
 
-        dataSource.setInitialSize(Integer.parseInt(properties.getProperty("jdbc.initsize","5")));
-        dataSource.setMaxTotal(Integer.parseInt(properties.getProperty("jdbc.maxsize","20")));
-        dataSource.setMaxWaitMillis(Integer.parseInt(properties.getProperty("jdbc.maxwait","5000")));
-        dataSource.setMaxIdle(Integer.parseInt(properties.getProperty("jdbc.maxidel","10")));
-        dataSource.setMinIdle(Integer.parseInt(properties.getProperty("jdbc.minidel","5")));
+        dataSource.setInitialSize(Integer.parseInt(properties.getProperty("jdbc.initsize", "5")));
+        dataSource.setMaxTotal(Integer.parseInt(properties.getProperty("jdbc.maxsize", "20")));
+        dataSource.setMaxWaitMillis(Integer.parseInt(properties.getProperty("jdbc.maxwait", "5000")));
+        dataSource.setMaxIdle(Integer.parseInt(properties.getProperty("jdbc.maxidel", "10")));
+        dataSource.setMinIdle(Integer.parseInt(properties.getProperty("jdbc.minidel", "5")));
     }
+
+    public static BasicDataSource getDataSource() {
+        return dataSource;
+    }
+
     public static Connection getConnection() {
         try {
             Connection connection = dataSource.getConnection();
             return connection;
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new DataAccessException("连接数据库异常");
         }
     }
