@@ -10,7 +10,7 @@ import java.util.List;
 public class UserDAO {
     public void save(User user) {
         String sql = "insert into student (name,address,tel) values (?,?,?)";
-        DbHelper.update(sql, user.getName(), user.getAddress(), user.getTel());
+        DbHelper.update(sql, user.getName(), user.getAddress(), user.getPassword());
     }
 
     public void updateById(String name, Integer id) {
@@ -26,6 +26,11 @@ public class UserDAO {
     public User queryById(Integer id) {
         String sql = "select * from student where id =?";
         User user = DbHelper.query(sql, new BeanHandler<>(User.class), id);
+        return user;
+    }
+    public User queryByUsername(String username) {
+        String sql = "select * from student where name =?";
+        User user = DbHelper.query(sql, new BeanHandler<>(User.class), username);
         return user;
     }
 

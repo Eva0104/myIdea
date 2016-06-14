@@ -13,19 +13,24 @@
             验证码错误！
         </div>
     </c:when>
+    <c:when test="${param.code==1002}">
+        <div class="alert alert-danger">
+            用户名或密码错误！
+        </div>
+    </c:when>
 </c:choose>
 
-<div class="split-pane-divider">
+<div class="split-pane-divider" style="margin-top: 20px">
     <form action="/login" method="post">
         <div>
             <label>用户名</label>
             <input class="split-pane" type="text" name="username">
         </div>
-        <div>
+        <div style="margin-top: 10px">
             <lable>密&nbsp;&nbsp;&nbsp;&nbsp;码</lable>
             <input class="split-pane" type="password" name="pwd">
         </div>
-        <div>
+        <div style="margin-top: 10px">
             <label>验证码</label>
             <input type="text" class="split-pane" name="captcha">
         </div>
@@ -33,7 +38,7 @@
         <button>登录</button>
     </form>
 </div>
-<script src="/static/js/jquery-1.12.3.min.js"></script>
+<script src="/static/js/jquery-1.11.3.min.js"></script>
 <script>
     $(function () {
         $("#changePic").click(function () {

@@ -4,12 +4,12 @@ public class User {
     private Integer id;
     private String name;
     private String address;
-    private String tel;
+    private String password;
 
     public User(){}
-    public User(String name, String address, String tel) {
+    public User(String name, String address, String password) {
         this.name = name;
-        this.tel = tel;
+        this.password = password;
         this.address = address;
     }
 
@@ -37,12 +37,12 @@ public class User {
         this.address = address;
     }
 
-    public String getTel() {
-        return tel;
+    public String getPassword() {
+        return password;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
-                ", tel='" + tel + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 }

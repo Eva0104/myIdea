@@ -1,5 +1,6 @@
 package com.zhuxiaoxue.web;
 
+import com.zhuxiaoxue.servic.UserServic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -27,7 +28,16 @@ public class LoginServlet extends HttpServlet{
 
         if(captcha != null && captcha.equalsIgnoreCase(sessionCaptcha)){
             String name = req.getParameter("username");
-            logger.info("{}登录成功",name);
+            String pwd = req.getParameter("pwd");
+
+            UserServic userServic = new UserServic();
+
+            if(userServic.login(name,pwd) != null){
+                logger.info("{}登录成功",name);
+            }else{
+                logger.error("用户名或密码错误！");
+                resp.sendRedirect("/login?code=1002");
+            }
         }else{
             logger.info("验证码错误");
             resp.sendRedirect("/login?code=1001");
