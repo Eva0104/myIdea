@@ -11,8 +11,8 @@ public class CodecTest {
     @Test
     public void md5Test() {
         String password = "111111";
-        String salt = "%%%%%%%%%%";
-        password = DigestUtils.md5Hex(password + salt);
+        //String salt = "%%%%%%%%%%";
+        password = DigestUtils.md5Hex(password);
         System.out.println(password);
     }
 

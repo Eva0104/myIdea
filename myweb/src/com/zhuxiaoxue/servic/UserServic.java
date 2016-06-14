@@ -21,8 +21,7 @@ public class UserServic {
      */
     public User login(String username, String password) {
         User user = dao.queryByUsername(username);
-        DigestUtils.md5Hex(password + salt);
-        if (user != null && user.getPassword().equals(DigestUtils.md5Hex(password + salt))) {
+        if (user != null && user.getPassword().equals(password)) {
             return user;
         } else {
 
