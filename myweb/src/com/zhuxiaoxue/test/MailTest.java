@@ -4,6 +4,7 @@ import com.zhuxiaoxue.util.Config;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
+import org.joda.time.DateTime;
 import org.junit.Test;
 
 public class MailTest {
@@ -18,8 +19,8 @@ public class MailTest {
 
         try{
             email.setFrom(Config.getConfig("mail.setFrom"));
-            email.setSubject("我还没写到时间部分");
-            email.setMsg("这是利用commons包发出的电子邮件");
+            email.setSubject("练习一下 ^-^");
+            email.setMsg("现在时间"+ DateTime.now().toString("yyyy-MM-dd hh:mm:ss"));
             //email.addTo("342030831@qq.com");
             email.addTo("xieyue86@163.com");
             email.send();
