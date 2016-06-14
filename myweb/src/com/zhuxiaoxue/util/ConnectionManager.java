@@ -13,24 +13,24 @@ public class ConnectionManager {
     private static BasicDataSource dataSource = new BasicDataSource();
 
     static {
-        Properties properties = new Properties();
+      /*  Properties properties = new Properties();
 
         try {
             properties.load(ConnectionManager.class.getClassLoader().getResourceAsStream("config.properties"));
         } catch (IOException e) {
             throw new DataAccessException("读取config.properties异常");
-        }
+        }*/
 
-        dataSource.setDriverClassName(properties.getProperty("jdbc.driver"));
-        dataSource.setUrl(properties.getProperty("jdbc.url"));
-        dataSource.setUsername(properties.getProperty("jdbc.username"));
-        dataSource.setPassword(properties.getProperty("jdbc.password"));
+        dataSource.setDriverClassName(Config.getConfig("jdbc.driver"));
+        dataSource.setUrl(Config.getConfig("jdbc.url"));
+        dataSource.setUsername(Config.getConfig("jdbc.username"));
+        dataSource.setPassword(Config.getConfig("jdbc.password"));
 
-        dataSource.setInitialSize(Integer.parseInt(properties.getProperty("jdbc.initsize", "5")));
-        dataSource.setMaxTotal(Integer.parseInt(properties.getProperty("jdbc.maxsize", "20")));
-        dataSource.setMaxWaitMillis(Integer.parseInt(properties.getProperty("jdbc.maxwait", "5000")));
-        dataSource.setMaxIdle(Integer.parseInt(properties.getProperty("jdbc.maxidel", "10")));
-        dataSource.setMinIdle(Integer.parseInt(properties.getProperty("jdbc.minidel", "5")));
+        dataSource.setInitialSize(Integer.parseInt(Config.getConfig("jdbc.initsize", "5")));
+        dataSource.setMaxTotal(Integer.parseInt(Config.getConfig("jdbc.maxsize", "20")));
+        dataSource.setMaxWaitMillis(Integer.parseInt(Config.getConfig("jdbc.maxwait", "5000")));
+        dataSource.setMaxIdle(Integer.parseInt(Config.getConfig("jdbc.maxidel", "10")));
+        dataSource.setMinIdle(Integer.parseInt(Config.getConfig("jdbc.minidel", "5")));
     }
 
     public static BasicDataSource getDataSource() {
