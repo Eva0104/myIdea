@@ -37,6 +37,5 @@ public class MailTest {
         user.setName("Tom");
         user.setAddress("zhuxiaoxue0104@126.com");
         MailUtil mailUtil = new MailUtil();
-        mailUtil.sendEmail(user);
     }
 }
