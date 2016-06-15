@@ -1,6 +1,8 @@
 package com.zhuxiaoxue.test;
 
+import com.zhuxiaoxue.entity.User;
 import com.zhuxiaoxue.util.Config;
+import com.zhuxiaoxue.util.MailUtil;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
@@ -28,5 +30,13 @@ public class MailTest {
             throw new RuntimeException(ex);
         }
 
+    }
+    @Test
+    public  void mailUtilTest(){
+        User user = new User();
+        user.setName("Tom");
+        user.setAddress("zhuxiaoxue0104@126.com");
+        MailUtil mailUtil = new MailUtil();
+        mailUtil.sendEmail(user);
     }
 }

@@ -2,7 +2,7 @@ package com.zhuxiaoxue.servic;
 
 import com.zhuxiaoxue.dao.UserDAO;
 import com.zhuxiaoxue.entity.User;
-import org.apache.commons.codec.digest.DigestUtils;
+import com.zhuxiaoxue.util.MailUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -22,9 +22,10 @@ public class UserServic {
     public User login(String username, String password) {
         User user = dao.queryByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
+            MailUtil mailUtil = new MailUtil();
+            mailUtil.sendEmail(user);
             return user;
         } else {
-
             return null;
         }
 
