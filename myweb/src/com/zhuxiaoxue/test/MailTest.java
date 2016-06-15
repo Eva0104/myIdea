@@ -72,8 +72,6 @@ public class MailTest {
         }catch (Exception ex){
             throw new RuntimeException(ex);
         }
-
-
     }
 
 }

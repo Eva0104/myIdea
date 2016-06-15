@@ -21,12 +21,17 @@ public class UserServic {
      * @return 如果登录成功返回User对象，登录失败则返回null
      */
     public User login(String username, String password) {
-        User user = dao.queryByUsername(username);
+        final User user = dao.queryByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
-            MailUtil mailUtil = new MailUtil();
-            String msg = "账号" + user.getName() + "在" + DateTime.now().toString("yyyy-MM-dd hh:mm:ss") + "登录";
-            String subject="账号登录信息";
-            mailUtil.sendEmail(user.getAddress(),msg,subject);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    String msg = "账号" + user.getName() + "在" + DateTime.now().toString("yyyy-MM-dd hh:mm:ss") + "登录";
+                    String subject="账号登录信息";
+                    MailUtil.sendEmail(user.getAddress(),msg,subject);
+                }
+            }).start();
+
             return user;
         } else {
             return null;

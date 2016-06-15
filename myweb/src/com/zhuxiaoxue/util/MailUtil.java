@@ -9,34 +9,35 @@ import org.slf4j.LoggerFactory;
 
 public class MailUtil {
 
-    Logger logger = LoggerFactory.getLogger(MailUtil.class);
+    private static Logger logger = LoggerFactory.getLogger(MailUtil.class);
 
     /**
-     *发送邮件
+     * 发送邮件
+     *
      * @param toAddress 收件人地址
-     * @param msg 内容
-     * @param subject 标题
+     * @param msg       内容
+     * @param subject   标题
      */
-    public void sendEmail(String toAddress,String msg,String subject){
+    public static void sendEmail(String toAddress, String msg, String subject) {
         Email email = new SimpleEmail();
-        email.setAuthentication(Config.getConfig("mail.username"),Config.getConfig("mail.password"));
+        email.setAuthentication(Config.getConfig("mail.username"), Config.getConfig("mail.password"));
         email.setHostName(Config.getConfig("mail.hostName"));
         email.setSmtpPort(Integer.parseInt(Config.getConfig("mail.port")));
         email.setCharset(Config.getConfig("mail.charset"));
 
-        try{
+        try {
             email.setFrom(Config.getConfig("mail.setFrom"));
             email.setSubject(subject);
             email.setMsg(msg);
             email.addTo(toAddress);
             email.send();
-            logger.info("给{}发送邮件成功",toAddress);
-        }catch (Exception ex){
-            logger.error("给{}发送邮件失败",toAddress);
+            logger.info("给{}发送邮件成功", toAddress);
+        } catch (Exception ex) {
+            logger.error("给{}发送邮件失败", toAddress);
             throw new RuntimeException(ex);
         }
     }
-//    public void sendEmail(User user) {
+//    public static void sendEmail(User user) {
 //        Email email = new SimpleEmail();
 //        email.setAuthentication(Config.getConfig("mail.username"), Config.getConfig("mail.password"));
 //        email.setHostName(Config.getConfig("mail.hostName"));
