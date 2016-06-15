@@ -29,6 +29,7 @@ public class UserServic {
                     String msg = "账号" + user.getName() + "在" + DateTime.now().toString("yyyy-MM-dd hh:mm:ss") + "登录";
                     String subject="账号登录信息";
                     MailUtil.sendEmail(user.getAddress(),msg,subject);
+//                    MailUtil.sendEmail(user);
                 }
             }).start();
 
