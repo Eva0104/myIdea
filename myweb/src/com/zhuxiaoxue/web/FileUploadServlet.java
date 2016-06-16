@@ -1,5 +1,6 @@
 package com.zhuxiaoxue.web;
 
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,17 +51,22 @@ public class FileUploadServlet extends HttpServlet {
         InputStream inputStream = part.getInputStream();
         FileOutputStream fileOutputStream = new FileOutputStream(new File(dir,fileName));
 
-        BufferedInputStream bufferInput = new BufferedInputStream(inputStream);
-        BufferedOutputStream bufferOutput = new BufferedOutputStream(fileOutputStream);
+        IOUtils.copy(inputStream,fileOutputStream);
 
-        byte[] buffer = new byte[1024];
-        int len = -1;
-        while((len = bufferInput.read(buffer)) != -1){
-            bufferOutput.write(buffer,0,len);
-        }
-        bufferOutput.flush();
-        bufferOutput.close();
-        bufferInput.close();
+        inputStream.close();
+        fileOutputStream.close();
+
+//        BufferedInputStream bufferInput = new BufferedInputStream(inputStream);
+//        BufferedOutputStream bufferOutput = new BufferedOutputStream(fileOutputStream);
+//
+//        byte[] buffer = new byte[1024];
+//        int len = -1;
+//        while((len = bufferInput.read(buffer)) != -1){
+//            bufferOutput.write(buffer,0,len);
+//        }
+//        bufferOutput.flush();
+//        bufferOutput.close();
+//        bufferInput.close();
     }
 
     public String getFileName(Part part) {
