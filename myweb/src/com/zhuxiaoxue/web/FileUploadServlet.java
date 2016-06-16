@@ -30,9 +30,12 @@ public class FileUploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setCharacterEncoding("UTF-8");
 
-        Part part = req.getPart("doc");
+
         String fileDesc = req.getParameter("fileDesc");
         logger.info("文件描述：{}", fileDesc);
+
+        Part part = req.getPart("doc");
+
 
         //获取的MIME头
         String contentType = part.getContentType();
@@ -55,6 +58,7 @@ public class FileUploadServlet extends HttpServlet {
         DocumentService documentService = new DocumentService();
         documentService.updateFile(fileName,size,inputStream);
 
+        resp.sendRedirect("/filelist");
 //        File dir = new File("D:/new");
 //        if(!dir.exists()){
 //            dir.mkdirs();
