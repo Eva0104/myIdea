@@ -43,7 +43,7 @@ public class MailTest {
             email.setSubject("练习一下 ^-^");
             email.setHtmlMsg("<h1 style=\"color:red\">练习发送Html邮件</h1>");
             //email.addTo("342030831@qq.com");
-            email.addTo("zhuxiaoxue0104@126.com");
+            email.addTo("342030831@qq.com");
             email.send();
         } catch (EmailException ex) {
             throw new RuntimeException(ex);
@@ -73,5 +73,6 @@ public class MailTest {
             throw new RuntimeException(ex);
         }
     }
+
 
 }
