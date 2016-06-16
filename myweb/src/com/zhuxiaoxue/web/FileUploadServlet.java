@@ -1,5 +1,6 @@
 package com.zhuxiaoxue.web;
 
+import com.zhuxiaoxue.servic.DocumentService;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 import java.io.*;
+import java.util.UUID;
 
 @WebServlet("/upload")
 @MultipartConfig
@@ -34,7 +36,7 @@ public class FileUploadServlet extends HttpServlet {
 
         //获取的MIME头
         String contentType = part.getContentType();
-        logger.info(contentType);
+        logger.info("MIME: {}",contentType);
 
         //获取文件大小
         Long size = part.getSize();
@@ -43,18 +45,27 @@ public class FileUploadServlet extends HttpServlet {
         //获取文件名
         String fileName = getFileName(part);
         logger.info("文件名：{}", fileName);
+        String uuid = UUID.randomUUID().toString();
 
-        File dir = new File("D:/new");
-        if(!dir.exists()){
-            dir.mkdirs();
-        }
+        String md5 = uuid + fileName.substring(fileName.indexOf("."));
+        logger.info(md5);
+
         InputStream inputStream = part.getInputStream();
-        FileOutputStream fileOutputStream = new FileOutputStream(new File(dir,fileName));
 
-        IOUtils.copy(inputStream,fileOutputStream);
+        DocumentService documentService = new DocumentService();
+        documentService.updateFile(fileName,size,inputStream);
 
-        inputStream.close();
-        fileOutputStream.close();
+//        File dir = new File("D:/new");
+//        if(!dir.exists()){
+//            dir.mkdirs();
+//        }
+//        InputStream inputStream = part.getInputStream();
+//        FileOutputStream fileOutputStream = new FileOutputStream(new File(dir,md5));
+//
+//        IOUtils.copy(inputStream,fileOutputStream);
+//
+//        inputStream.close();
+//        fileOutputStream.close();
 
 //        BufferedInputStream bufferInput = new BufferedInputStream(inputStream);
 //        BufferedOutputStream bufferOutput = new BufferedOutputStream(fileOutputStream);
