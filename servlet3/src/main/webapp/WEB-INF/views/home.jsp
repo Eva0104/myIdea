@@ -35,11 +35,18 @@
                                 <td>${movie.releaseyear}</td>
                                 <td>${movie.sendtime}</td>
                             </tr>
-
                         </c:forEach>
-                    
                     </tbody>
+
                 </table>
+            </div>
+            <div class="panel-footer text-right">
+                <ul>
+                    <a href="/home?p=1">首页</a>
+                    <a href="/home?p=${param.p-1}">上一页</a>
+                    <a href="/home?p=${param.p+1}">下一页</a>
+                    <a href="/home?p=69">末页</a>
+                </ul>
             </div>
         </div>
     </div>
