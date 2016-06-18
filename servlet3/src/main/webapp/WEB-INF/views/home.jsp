@@ -46,30 +46,48 @@
                 </table>
             </div>
             <div class="panel-footer text-right">
-                <ul class="pagination">
-                    <c:choose>
-                        <c:when test="${page.pageNum == 1}">
-                            <li class="disabled"><a href="/home?p=1">首页</a></li>
-                            <li class="disabled" ><a href="/home?p=${page.pageNum-1}">上一页</a></li>
-                        </c:when>
-                        <c:otherwise>
-                            <li><a href="/home?p=1">首页</a></li>
-                            <li><a href="/home?p=${page.pageNum-1}">上一页</a></li>
-                        </c:otherwise>
-                    </c:choose>
-                    <c:choose>
-                        <c:when test="${page.pageNum == page.totalPageSize}">
-                            <li class="disabled"><a  href="/home?p=${page.pageNum+1}">下一页</a></li>
-                            <li class="disabled"><a href="/home?p=${page.totalPageSize}">末页</a></li>
-                        </c:when>
-                        <c:otherwise>
-                            <li><a href="/home?p=${page.pageNum+1}">下一页</a></li>
-                            <li><a href="/home?p=${page.totalPageSize}">末页</a></li>
-                        </c:otherwise>
-                    </c:choose>
-                </ul>
+                <ul id="page" class="pagination" style="margin: 0px;"></ul>
+                <%--<ul class="pagination" style="margin: 0px">--%>
+                    <%--<c:choose>--%>
+                        <%--<c:when test="${page.pageNum == 1}">--%>
+                            <%--<li class="disabled"><a href="/home?p=1">首页</a></li>--%>
+                            <%--<li class="disabled" ><a href="/home?p=${page.pageNum-1}">上一页</a></li>--%>
+                        <%--</c:when>--%>
+                        <%--<c:otherwise>--%>
+                            <%--<li><a href="/home?p=1">首页</a></li>--%>
+                            <%--<li><a href="/home?p=${page.pageNum-1}">上一页</a></li>--%>
+                        <%--</c:otherwise>--%>
+                    <%--</c:choose>--%>
+                    <%--<c:choose>--%>
+                        <%--<c:when test="${page.pageNum == page.totalPageSize}">--%>
+                            <%--<li class="disabled"><a  href="/home?p=${page.pageNum+1}">下一页</a></li>--%>
+                            <%--<li class="disabled"><a href="/home?p=${page.totalPageSize}">末页</a></li>--%>
+                        <%--</c:when>--%>
+                        <%--<c:otherwise>--%>
+                            <%--<li><a href="/home?p=${page.pageNum+1}">下一页</a></li>--%>
+                            <%--<li><a href="/home?p=${page.totalPageSize}">末页</a></li>--%>
+                        <%--</c:otherwise>--%>
+                    <%--</c:choose>--%>
+                <%--</ul>--%>
             </div>
         </div>
     </div>
+<script src="/static/js/jquery-1.11.3.min.js"></script>
+<script src="/static/js/jquery.twbsPagination.min.js"></script>
+    <script>
+        $(function(){
+            $("#page").twbsPagination({
+                totalPages:${page.totalPageSize},
+                first:'首页',
+                prev:'<<',
+                next:'>>',
+                last:'末页',
+                visiblePages:10,
+                href:'?p={{number}}',
+            })
+        })
+
+    </script>
+
 </body>
 </html>
