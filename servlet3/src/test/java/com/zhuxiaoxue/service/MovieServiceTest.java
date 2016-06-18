@@ -2,6 +2,8 @@ package com.zhuxiaoxue.service;
 
 import com.zhuxiaoxue.entity.Movie;
 import static org.junit.Assert.*;
+
+import com.zhuxiaoxue.util.Page;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,7 +21,7 @@ public class MovieServiceTest {
     }
     @Test
     public void TestMovieByPage(){
-        List<Movie> list = movieService.findMovieByPage(1);
-        assertEquals(list.size(),10);
+        Page<Movie> list = movieService.findMovieByPage(1);
+        assertNotNull(list);
     }
 }

@@ -79,5 +79,4 @@ public class Movie {
         this.jianjie = jianjie;
     }
 
-
 }

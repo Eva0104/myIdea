@@ -6,6 +6,11 @@
     <title>Title</title>
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 </head>
+<style>
+    body{
+        background-color: #5cb85c;
+    }
+</style>
 <body>
     <div class="container">
         <div class="page-header">
@@ -27,7 +32,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <c:forEach items="${requestScope.movie}" var="movie">
+                        <c:forEach items="${requestScope.page.items}" var="movie">
                             <tr>
                                 <td width="400">${movie.title}</td>
                                 <td>${movie.rate}</td>
@@ -45,7 +50,7 @@
                     <a href="/home?p=1">首页</a>
                     <a href="/home?p=${param.p-1}">上一页</a>
                     <a href="/home?p=${param.p+1}">下一页</a>
-                    <a href="/home?p=69">末页</a>
+                    <a href="/home?p=${69}">末页</a>
                 </ul>
             </div>
         </div>

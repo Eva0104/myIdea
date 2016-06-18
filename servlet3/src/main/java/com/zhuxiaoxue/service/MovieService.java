@@ -2,6 +2,7 @@ package com.zhuxiaoxue.service;
 
 import com.zhuxiaoxue.dao.MovieDAO;
 import com.zhuxiaoxue.entity.Movie;
+import com.zhuxiaoxue.util.Page;
 
 import java.util.List;
 
@@ -12,19 +13,24 @@ public class MovieService {
         return dao.findAll();
     }
 
-    public List<Movie> findMovieByPage(int pageNum) {
+    public Page<Movie> findMovieByPage(int pageNum) {
 
         int totalsize = dao.getCount().intValue();//共多少条数据
-
         int size = 10;//每页显示10条数据
-        int totalPageSize = totalsize / size;//共多少页
 
-        if (totalsize % size != 0) {
-            totalPageSize++;
-        }
+        Page<Movie> page = new Page(totalsize,pageNum,size);
 
-        int start = (pageNum - 1) * size;
+        List<Movie> movieList = dao.findByPage(page.getStart(),size);
+        page.setItems(movieList);
+        return page;
 
-        return dao.findByPage(start, size);
+//        int totalPageSize = totalsize / size;//共多少页
+//
+//        if (totalsize % size != 0) {
+//            totalPageSize++;
+//        }
+//
+//        int start = (pageNum - 1) * size;
+
     }
 }

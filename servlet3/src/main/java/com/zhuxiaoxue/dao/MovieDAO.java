@@ -9,19 +9,20 @@ import java.util.List;
 
 public class MovieDAO {
 
-    public List<Movie> findAll(){
+    public List<Movie> findAll() {
         String sql = "select * from movie";
-        return DbHelper.query(sql,new BeanListHandler<>(Movie.class));
+        return DbHelper.query(sql, new BeanListHandler<>(Movie.class));
     }
 
-    public List<Movie> findByPage(int start,int size){
+    public List<Movie> findByPage(int start, int size) {
         String sql = "select * from movie limit ?,?";
-        return DbHelper.query(sql,new BeanListHandler<>(Movie.class),start,size);
+        return DbHelper.query(sql, new BeanListHandler<>(Movie.class), start, size);
     }
 
-    public Long getCount(){
+    public Long getCount() {
         String sql = "select count(*) from movie";
-        return DbHelper.query(sql,new ScalarHandler<Long>());
+        return DbHelper.query(sql, new ScalarHandler<Long>());
     }
+
 
 }

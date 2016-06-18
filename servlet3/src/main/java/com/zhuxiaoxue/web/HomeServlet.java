@@ -2,6 +2,7 @@ package com.zhuxiaoxue.web;
 
 import com.zhuxiaoxue.entity.Movie;
 import com.zhuxiaoxue.service.MovieService;
+import com.zhuxiaoxue.util.Page;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,10 +19,12 @@ public class HomeServlet extends HttpServlet{
 
         MovieService movieService = new MovieService();
 
-        int page = Integer.parseInt(req.getParameter("p"));
+        int pg = Integer.parseInt(req.getParameter("p"));
 
-        List<Movie> movieList = movieService.findMovieByPage(page);
-        req.setAttribute("movie",movieList);
+
+
+        Page<Movie> page = movieService.findMovieByPage(pg);
+        req.setAttribute("page",page);
         req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req,resp);
     }
 }
