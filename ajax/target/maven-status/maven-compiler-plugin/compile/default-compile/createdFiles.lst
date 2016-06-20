@@ -1,2 +1,8 @@
-com\zhuxiaoxue\web\CheckUsername.class
+com\zhuxiaoxue\util\ConnectionManager.class
+com\zhuxiaoxue\dao\UserDAO.class
+com\zhuxiaoxue\util\DbHelper.class
+com\zhuxiaoxue\entity\User.class
 com\zhuxiaoxue\web\Ajax.class
+com\zhuxiaoxue\util\Config.class
+com\zhuxiaoxue\web\CheckUsername.class
+com\zhuxiaoxue\exception\DataAccessException.class
