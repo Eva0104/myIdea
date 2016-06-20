@@ -23,7 +23,7 @@
             var username = this.value;
             var xmlHttp = createXmlHttp();
 
-            xmlHttp.open("get","/checkUsername?username="+username,true);
+            xmlHttp.open("get","/checkUsername?username="+encodeURIComponent(username),true);
 
             xmlHttp.onreadystatechange = function(){
 

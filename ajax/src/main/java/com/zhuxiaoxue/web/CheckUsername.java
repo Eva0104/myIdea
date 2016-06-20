@@ -17,8 +17,8 @@ public class CheckUsername extends HttpServlet{
     private Logger logger = LoggerFactory.getLogger(CheckUsername.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
         String username = req.getParameter("username");
+        username = new String(username.getBytes("ISO8859-1"),"UTF-8");
         logger.info(username);
         PrintWriter out = resp.getWriter();
         if("tom".equals(username)){
