@@ -3,6 +3,7 @@ package com.zhuxiaoxue.web;
 import com.zhuxiaoxue.entity.Movie;
 import com.zhuxiaoxue.service.MovieService;
 import com.zhuxiaoxue.util.Page;
+import org.apache.commons.lang3.StringUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,11 +19,11 @@ public class HomeServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         MovieService movieService = new MovieService();
-
-        int pg = Integer.parseInt(req.getParameter("p"));
-
-
-
+        String p = req.getParameter("p");
+        int pg = 1;
+        if(StringUtils.isNumeric(p)){
+            pg = Integer.parseInt(p);
+        }
         Page<Movie> page = movieService.findMovieByPage(pg);
         req.setAttribute("page",page);
         req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req,resp);
