@@ -19,7 +19,7 @@
             }
             return xmlHttp;
         }
-        document.querySelector("#userName").onchange = function(){
+        document.querySelector("#userName").onblur = function(){
             var username = this.value;
             var xmlHttp = createXmlHttp();
 
