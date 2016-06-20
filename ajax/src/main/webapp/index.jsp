@@ -7,9 +7,9 @@
 </head>
 <body>
 <input type="text" id="userName"><span id="result"></span>
-
+<script src="/static/js/ajax.js"></script>
 <script>
-    (function(){
+   (function(){
         function createXmlHttp(){
             var xmlHttp = null;
             if(window.ActiveXObject){
@@ -45,6 +45,7 @@
             };
             xmlHttp.send();
         }
+
     })();
 
 </script>
