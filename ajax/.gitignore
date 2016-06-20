@@ -1,0 +1,5 @@
+.idea/
+.gitinore
+target/
+static/
+*.iml/
