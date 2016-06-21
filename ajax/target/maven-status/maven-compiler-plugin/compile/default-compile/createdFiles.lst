@@ -6,3 +6,4 @@ com\zhuxiaoxue\web\Ajax.class
 com\zhuxiaoxue\util\Config.class
 com\zhuxiaoxue\web\CheckUsername.class
 com\zhuxiaoxue\exception\DataAccessException.class
+com\zhuxiaoxue\web\UserXMLServlet.class
