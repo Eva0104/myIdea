@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <style>
+        body{
+            margin-top: 20px;
+            font-size: 24px;
+            background-color: #e4a1df;
+        }
+
+    </style>
 </head>
 <body>
 <div class="container">
 
-    <button id="btn">访问hao123</button>
-    <ul class="list-unstyled" id="ul">
+    <input type="text" id="url" class="col-xs-6"><button id="btn">访问</button>
+    <ul id="ul">
 
     </ul>
 </div>
@@ -42,7 +50,8 @@
 
         document.querySelector("#btn").onclick = function () {
             var xmlHttp = createXmlHttp();
-            xmlHttp.open("get", "/load", true);
+            var url = document.querySelector("#url").value;
+            xmlHttp.open("get", "/load?url=" + url, true);
             xmlHttp.onreadystatechange = function () {
                 if (xmlHttp.readyState == 4) {
                     var status = xmlHttp.status;

@@ -17,7 +17,8 @@ public class HttpClientServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/xml;charset=UTF-8");
 
-        String result = HttpUtil.crestHttpClient();
+        String url = req.getParameter("url");
+        String result = HttpUtil.crestHttpClient(url);
         PrintWriter out = resp.getWriter();
         out.print(result);
         out.flush();

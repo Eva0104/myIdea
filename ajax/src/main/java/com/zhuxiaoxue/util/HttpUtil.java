@@ -11,10 +11,10 @@ import java.io.InputStream;
 
 public class HttpUtil {
 
-    public static String crestHttpClient() throws IOException {
+    public static String crestHttpClient(String url) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();
 
-        HttpGet httpGet = new HttpGet("http://blog.sina.com.cn/rss/1220218113.xml");
+        HttpGet httpGet = new HttpGet(url);
         HttpResponse resp = httpClient.execute(httpGet);
 
         int httpCode = resp.getStatusLine().getStatusCode();
