@@ -39,7 +39,7 @@
         function createXmlHttp() {
             var xmlHttp = null;
             if (window.ActiveXObject) {
-                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
             } else {
                 xmlHttp = new XMLHttpRequest();
             }
@@ -69,11 +69,8 @@
                     }
                 }
             };
-
             xmlHttp.send();
         }
-
-
     })();
 </script>
 </body>
