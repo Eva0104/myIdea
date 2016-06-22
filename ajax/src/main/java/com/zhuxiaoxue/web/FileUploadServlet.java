@@ -1,5 +1,6 @@
 package com.zhuxiaoxue.web;
 
+import com.zhuxiaoxue.service.DocumentService;
 import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,15 +38,20 @@ public class FileUploadServlet extends HttpServlet {
         logger.debug(fileName);
         String uuid = UUID.randomUUID().toString();
         fileName = uuid + fileName.substring(fileName.indexOf("."));
-        File dir = new File("D:/new");
-        if(!dir.exists()){
-            dir.mkdirs();
-        }
         InputStream inputStream = part.getInputStream();
-        FileOutputStream outputStream = new FileOutputStream(new File(dir,fileName));
-        IOUtils.copy(inputStream,outputStream);
-        inputStream.close();
-        outputStream.close();
+        DocumentService service = new DocumentService();
+        service.saveFile(fileName,inputStream);
+
+//        fileName = uuid + fileName.substring(fileName.indexOf("."));
+//        File dir = new File("D:/new");
+//        if(!dir.exists()){
+//            dir.mkdirs();
+//        }
+//        InputStream inputStream = part.getInputStream();
+//        FileOutputStream outputStream = new FileOutputStream(new File(dir,fileName));
+//        IOUtils.copy(inputStream,outputStream);
+//        inputStream.close();
+//        outputStream.close();
 
     }
     public String getFileName(Part part){

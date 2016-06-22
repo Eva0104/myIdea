@@ -1,6 +1,7 @@
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\dao\UserDAO.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\Ajax.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\UserXMLServlet.java
+D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\service\DocumentService.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\util\ConnectionManager.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\FileUploadServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\util\HttpUtil.java
