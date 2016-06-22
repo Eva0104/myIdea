@@ -2,6 +2,7 @@ com\zhuxiaoxue\dao\UserDAO.class
 com\zhuxiaoxue\util\ConnectionManager.class
 com\zhuxiaoxue\web\HttpClientServlet.class
 com\zhuxiaoxue\util\Config.class
+com\zhuxiaoxue\web\FileUploadServlet.class
 com\zhuxiaoxue\web\UserXMLServlet.class
 com\zhuxiaoxue\util\DbHelper.class
 com\zhuxiaoxue\util\HttpUtil.class
