@@ -8,6 +8,8 @@ com\zhuxiaoxue\web\FileUploadServlet.class
 com\zhuxiaoxue\web\UserXMLServlet.class
 com\zhuxiaoxue\dao\DocumentDAO.class
 com\zhuxiaoxue\util\DbHelper.class
+com\zhuxiaoxue\web\FileListServlet.class
+com\zhuxiaoxue\web\PreviewServlet.class
 com\zhuxiaoxue\util\HttpUtil.class
 com\zhuxiaoxue\entity\User.class
 com\zhuxiaoxue\web\Ajax.class
