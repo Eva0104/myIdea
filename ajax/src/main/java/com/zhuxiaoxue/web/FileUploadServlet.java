@@ -34,13 +34,16 @@ public class FileUploadServlet extends HttpServlet {
         logger.debug(fileDesc);
         String contentType = part.getContentType();
         Long size = part.getSize();
+
         String fileName = getFileName(part);
         logger.debug(fileName);
+
         String uuid = UUID.randomUUID().toString();
-        fileName = uuid + fileName.substring(fileName.indexOf("."));
+        String fileSaveName = uuid + fileName.substring(fileName.indexOf("."));
+
         InputStream inputStream = part.getInputStream();
         DocumentService service = new DocumentService();
-        service.saveFile(fileName,inputStream);
+        service.updateFile(fileName,size,inputStream);
 
 //        fileName = uuid + fileName.substring(fileName.indexOf("."));
 //        File dir = new File("D:/new");
