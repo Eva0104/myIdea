@@ -20,7 +20,7 @@ public class DictServlet extends HttpServlet {
         resp.setContentType("text/xml;charset=UTF-8");
         String url = "http://fanyi.youdao.com/openapi.do?keyfrom=kaishengit&key=1587754017&type=data&doctype=xml&version=1.1&q=" + p;
 
-        String result = HttpUtil.crestHttpClient(url);
+        String result = HttpUtil.getRequestText(url);
         PrintWriter out = resp.getWriter();
         out.print(result);
         out.flush();

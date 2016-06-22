@@ -49,7 +49,7 @@
                             var explain = basic.getElementsByTagName("explains")[0];
                             var exs = explain.getElementsByTagName("ex");
 
-                            for (var i in exs) {
+                            for (var i = 0;i < exs.length;i++) {
                                 var ex = exs[i].firstChild.nodeValue;
                                 document.querySelector("#p").appendChild(document.createTextNode(ex))
                             }
@@ -58,7 +58,7 @@
                             alert("请求异常：" + status);
                         }
                     }
-                }
+                };
                 xmlHttp.send();
             }
 

@@ -18,7 +18,7 @@ public class HttpClientServlet extends HttpServlet {
         resp.setContentType("text/xml;charset=UTF-8");
 
         String url = req.getParameter("url");
-        String result = HttpUtil.crestHttpClient(url);
+        String result = HttpUtil.getRequestText(url);
         PrintWriter out = resp.getWriter();
         out.print(result);
         out.flush();
