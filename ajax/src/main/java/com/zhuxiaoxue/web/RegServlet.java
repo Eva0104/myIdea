@@ -16,17 +16,24 @@ import java.io.PrintWriter;
 public class RegServlet extends HttpServlet {
     private Logger logger = LoggerFactory.getLogger(RegServlet.class);
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+
+        resp.setContentType("application/json;charset=UTF-8");
         String name = req.getParameter("username");
         String password = req.getParameter("password");
 
         logger.info("name{}",name);
         logger.info("password{}",password);
+
+        PrintWriter out = resp.getWriter();
+        out.print(new Gson().toJson("yes"));
+        out.flush();
+        out.close();
 
     }
 }
