@@ -16,8 +16,12 @@ import java.io.PrintWriter;
 public class RegServlet extends HttpServlet {
     private Logger logger = LoggerFactory.getLogger(RegServlet.class);
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setCharacterEncoding("UTF-8");
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         String name = req.getParameter("username");
         String password = req.getParameter("password");
 

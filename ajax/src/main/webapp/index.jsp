@@ -118,14 +118,24 @@
                     required: "请输入密码",
                 }
             },
-            submitHandler: function () {
-                $.get("/reg", {"username": $("#name").val(),"password":$("#p").val()})
-                        .done(function (result) {
-                            alert("注册成功")
-                        })
-                        .fail(function () {
-                            alert("服务器繁忙，请稍后重试！")
-                        })
+            submitHandler: function (form) {
+                $.ajax({
+                    url: "/reg",
+                    type: "post",
+                    data: $(form).serialize(),
+                    beforeSend: function () {
+                        $("#btn").text("注册中......").attr("disabled", "disabled");
+                    },
+                    success: function () {
+                        alert("注册成功");
+                    },
+                    error:function(){
+                        alert("服务器繁忙，请稍后重试")
+                    },
+                    complete: function () {
+                        $("#btn").text("注册").removeAttr("disabled")
+                    }
+                })
             }
         });
 
