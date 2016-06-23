@@ -44,7 +44,7 @@ public class FileUploadServlet extends HttpServlet {
         InputStream inputStream = part.getInputStream();
         DocumentService service = new DocumentService();
         service.updateFile(fileName,size,inputStream);
-
+        resp.sendRedirect("/list");
 //        fileName = uuid + fileName.substring(fileName.indexOf("."));
 //        File dir = new File("D:/new");
 //        if(!dir.exists()){

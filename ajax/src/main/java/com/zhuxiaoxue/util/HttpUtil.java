@@ -1,6 +1,5 @@
 package com.zhuxiaoxue.util;
 
-import com.zhuxiaoxue.exception.DataAccessException;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -38,6 +37,7 @@ public class HttpUtil {
             }
         }
     }
+
 
     public static void getRequestStream(String url,String savePath){
         CloseableHttpClient httpClient = HttpClients.createDefault();

@@ -12,7 +12,7 @@
         <div>
             <div class="panel-heading">
                 文件列表
-                <a href="/upload" class="btn btn-success btn-sm pull-right">上传文件</a>
+                <a href="/servlet3" class="btn btn-success btn-sm pull-right">上传文件</a>
             </div>
         </div>
         <table class="table">

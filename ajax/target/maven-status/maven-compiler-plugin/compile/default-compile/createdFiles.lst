@@ -13,6 +13,7 @@ com\zhuxiaoxue\web\PreviewServlet.class
 com\zhuxiaoxue\util\HttpUtil.class
 com\zhuxiaoxue\entity\User.class
 com\zhuxiaoxue\web\Ajax.class
+com\zhuxiaoxue\web\UserJsonServlet.class
 com\zhuxiaoxue\web\DictServlet.class
 com\zhuxiaoxue\web\CheckUsername.class
 com\zhuxiaoxue\exception\DataAccessException.class
