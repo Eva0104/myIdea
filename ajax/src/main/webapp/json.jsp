@@ -91,13 +91,21 @@
                 complete: function () {
                     alert("complete")
                 },
+                statusCode: {
+                    404: function () {
+                        alert("page not found");
+                    },
+                    500: function () {
+                        alert("服务器运行时出错");
+                    }
+                },
                 error: function () {
                     alert("error");
                 },
                 beforeSend: function () {
                     alert("还未发送Ajax")
                 },
-                timeout:3000
+                timeout: 3000
 
 
             });

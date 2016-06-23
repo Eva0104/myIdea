@@ -3,37 +3,44 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
-    <title>Signin Template for Bootstrap</title>
-    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <title>RegForm</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
 </head>
 
 <body>
 
 <div class="container">
+    <div class="row">
+        <div class="col-xs-3">
+            <form name="myForm" id="regForm">
+                <legend>用户注册表</legend>
 
-    <form class="form-signin col-md-4" name="myForm">
-        <h2 class="form-signin-heading">请注册</h2>
-        <label for="username" class="sr-only">用户名</label>
-        <span id="result" style="color: red"></span>
-        <input type="text" id="username" class="form-control" placeholder="请输入用户名" required autofocus>
-        <label for="password" class="sr-only">密码</label>
-        <input type="password" id="password" class="form-control" placeholder="请输入密码" required>
-        <label for="email" class="sr-only">邮箱</label>
-        <input type="password" id="email" class="form-control" placeholder="请输入邮箱" required>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
+                <div class="form-group">
+                    <label>用户名</label>
+                    <input class="form-control" name="username" id="name">
+                </div>
+
+                <div class="form-group">
+                    <label>密码</label>
+                    <input class="form-control" name="password" id="p">
+                </div>
+
+                <div class="form-group">
+                    <label>个人简介</label>
+                    <input class="form-control" name="other" id="o">
+                </div>
+
+                <button type="button" id="btn" class="btn btn-primary">注册</button>
+            </form>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">注册</button>
-    </form>
+    </div>
 </div>
 </body>
 </html>
 
 <script src="/static/js/ajax.js"></script>
+<script src="/static/js/jquery-1.11.3.min.js"></script>
+<script src="/static/js/jquery.validate.js"></script>
 <script>
     (function () {
 //        function createXmlHttp(){
@@ -71,16 +78,60 @@
 //            };
 //            xmlHttp.send();
 //        }
-        document.querySelector("#username").onchange = function () {
-            Ajax.Get("checkUsername", function (result) {
-                    if (result == "yes") {
-                        document.querySelector("#result").innerText = "√";
-                    } else {
-                        document.querySelector("#result").innerText = "该用户名已存在";
-                    }
 
-            }, {username:myForm.username.value, password: document.querySelector("#password").value, address: myForm.email.value})
-        }
+
+//        document.querySelector("#username").onchange = function () {
+//            Ajax.Get("checkUsername", function (result) {
+//                if (result == "yes") {
+//                    document.querySelector("#result").innerText = "√";
+//                } else {
+//                    document.querySelector("#result").innerText = "该用户名已存在";
+//                }
+//
+//            }, {
+//                username: myForm.username.value,
+//                password: document.querySelector("#password").value,
+//                address: myForm.other.value
+//            })
+//        }
+
+        $("#regForm").validate({
+            errorElement: "span",
+            errorClass: "text-danger",
+            rules: {
+                username: {
+                    required: true,
+                    remote: "/checkUsername"
+
+                },
+                password: {
+                    required: true
+                },
+
+            },
+            messages: {
+                username: {
+                    required: "请输入用户名",
+                    remote: "该用户名已被占用"
+                },
+                password: {
+                    required: "请输入密码",
+                }
+            },
+            submitHandler: function () {
+                $.get("/reg", {"username": $("#name").val(),"password":$("#p").val()})
+                        .done(function (result) {
+                            alert("注册成功")
+                        })
+                        .fail(function () {
+                            alert("服务器繁忙，请稍后重试！")
+                        })
+            }
+        });
+
+        $("#btn").click(function () {
+            $("#regForm").submit();
+        })
     })();
 
 </script>

@@ -4,6 +4,7 @@ D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\UserXMLServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\util\ConnectionManager.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\service\DocumentService.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\dao\DocumentDAO.java
+D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\RegServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\FileUploadServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\util\HttpUtil.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\PreviewServlet.java

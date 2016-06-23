@@ -25,12 +25,11 @@ public class CheckUsername extends HttpServlet {
 
         UserDAO dao = new UserDAO();
         User user = dao.queryByUsername(username);
-        logger.info(String.valueOf(user));
         PrintWriter out = resp.getWriter();
         if (user != null) {
-            out.print("no");
+            out.print("false");
         } else {
-            out.print("yes");
+            out.print("true");
         }
         out.flush();
         out.close();

@@ -32,6 +32,7 @@ public class UserJsonServlet extends HttpServlet {
         String json = new Gson().toJson(userList);
 
         PrintWriter out = resp.getWriter();
+
         out.print(json);
         out.flush();
         out.close();
