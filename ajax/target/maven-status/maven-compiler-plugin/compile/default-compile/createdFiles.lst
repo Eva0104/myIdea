@@ -1,3 +1,4 @@
+com\zhuxiaoxue\web\FileServlet.class
 com\zhuxiaoxue\util\ConnectionManager.class
 com\zhuxiaoxue\service\DocumentService.class
 com\zhuxiaoxue\util\Config.class
