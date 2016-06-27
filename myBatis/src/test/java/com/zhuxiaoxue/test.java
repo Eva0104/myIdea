@@ -1,6 +1,7 @@
 package com.zhuxiaoxue;
 
 import com.zhuxiaoxue.pojo.User;
+import com.zhuxiaoxue.util.MybatisUtil;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -91,18 +92,11 @@ public class test {
 
     @Test
     public void testDelete(){
-        try {
-            Reader reader = Resources.getResourceAsReader("mybatis.xml");
-            SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
-            SqlSession sqlSession = sqlSessionFactory.openSession();
+            SqlSession sqlSession = MybatisUtil.getSqlSession();
 
-            sqlSession.delete("com.zhuxiaoxue.mapper.userMapper.delete",14);
+            sqlSession.delete("com.zhuxiaoxue.mapper.userMapper.delete",13);
 
             sqlSession.commit();
             sqlSession.close();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
