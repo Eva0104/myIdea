@@ -1,99 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d5692d6-6e24-4649-80b2-df2e0a588a62" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/img/IMG_0705.JPG" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/Uploader.swf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/zhuxiaoxue/util/EhcacheUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/ehcache.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/zhuxiaoxue/test/UserCacheTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__com_google_code_gson_gson_2_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__commons_codec_commons_codec_1_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__commons_dbutils_commons_dbutils_1_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__commons_io_commons_io_2_5.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__jstl_jstl_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__junit_junit_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_37.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__org_apache_commons_commons_dbcp2_2_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__org_apache_commons_commons_pool2_2_4_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__org_jsoup_jsoup_1_9_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_21.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/dao/ClientDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/dao/MessageDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/dao/UserDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/entity/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/entity/Message.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/entity/User.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/exception/DataAccessException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/service/ClientServic.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/service/MessageService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/util/Config.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/util/ConnectionManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/util/DbHelper.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/util/HttpUtil.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/web/BlogServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/web/CheckUserServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/java/com/zhuxiaoxue/web/LOginServlet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/resources/config.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/resources/logback.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/WEB-INF/views/blog.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/WEB-INF/views/login.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/css/blog/blog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/ajax.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/core.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/handlebars-v4.0.5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/jquery-1.11.3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/jquery.twbsPagination.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/jquery.validate.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/md5.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.custom.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.custom.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.fis.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.flashonly.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.flashonly.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.html5only.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.html5only.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.noimage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.noimage.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.nolog.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.nolog.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.withoutimage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../myProject/src/main/webapp/static/js/webuploader/webuploader.withoutimage.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/ajax_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/ajax_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax.iml" afterPath="$PROJECT_DIR$/ajax.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zhuxiaoxue/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/zhuxiaoxue/dao/UserDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/zhuxiaoxue/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/zhuxiaoxue/entity/User.java" />
-    </list>
+    <list default="true" id="1d5692d6-6e24-4649-80b2-df2e0a588a62" name="Default" comment="" />
     <ignored path="ajax.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1112,7 +1020,7 @@
       <workItem from="1466727689254" duration="1073000" />
       <workItem from="1466734664974" duration="17528000" />
       <workItem from="1466811956764" duration="2412000" />
-      <workItem from="1466993507317" duration="6538000" />
+      <workItem from="1466993507317" duration="7117000" />
     </task>
     <servers />
   </component>
@@ -1149,11 +1057,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118095000" />
+    <option name="totallyTimeSpent" value="118674000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />

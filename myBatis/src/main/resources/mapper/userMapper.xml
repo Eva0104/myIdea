@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhuxiaoxue.mapper.userMapper">
+
+    <select id="findById" parameterType="int" resultType="com.zhuxiaoxue.pojo.User">
+        SELECT * FROM student WHERE id = #{id}
+    </select>
+
+    <select id="findAll" resultType="com.zhuxiaoxue.pojo.User">
+        SELECT * FROM student
+    </select>
+
+    <insert id="save" parameterType="com.zhuxiaoxue.pojo.User">
+        INSERT INTO student (name, address, password) VALUES (#{name},#{address},#{password})
+    </insert>
+
+    <update id="update" parameterType="com.zhuxiaoxue.pojo.User">
+        UPDATE student SET name=#{name},address=#{address},password=#{password} WHERE id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM student WHERE id=#{id}
+    </delete>
+
+</mapper>
