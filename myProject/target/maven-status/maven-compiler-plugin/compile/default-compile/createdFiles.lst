@@ -1,0 +1,16 @@
+com\zhuxiaoxue\util\ConnectionManager.class
+com\zhuxiaoxue\dao\UserDAO.class
+com\zhuxiaoxue\util\Config.class
+com\zhuxiaoxue\entity\Client.class
+com\zhuxiaoxue\dao\MessageDAO.class
+com\zhuxiaoxue\service\MessageService.class
+com\zhuxiaoxue\web\CheckUserServlet.class
+com\zhuxiaoxue\util\DbHelper.class
+com\zhuxiaoxue\dao\ClientDAO.class
+com\zhuxiaoxue\util\HttpUtil.class
+com\zhuxiaoxue\service\ClientServic.class
+com\zhuxiaoxue\entity\User.class
+com\zhuxiaoxue\web\LoginServlet.class
+com\zhuxiaoxue\entity\Message.class
+com\zhuxiaoxue\web\BlogServlet.class
+com\zhuxiaoxue\exception\DataAccessException.class
