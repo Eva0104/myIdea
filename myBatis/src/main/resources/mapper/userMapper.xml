@@ -13,7 +13,7 @@
         SELECT * FROM student
     </select>
 
-    <insert id="save" parameterType="User">
+    <insert id="save" parameterType="User" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO student (name, address, password) VALUES (#{name},#{address},#{password})
     </insert>
 
@@ -24,5 +24,31 @@
     <delete id="delete" parameterType="int">
         DELETE FROM student WHERE id=#{id}
     </delete>
+
+    <select id="findByQueryParams" parameterType="map" resultType="User">
+        SELECT * FROM  student
+        <where>
+            <if test="username != null and username != ''">
+                name=#{username}
+            </if>
+            <if test="password != null and password != ''">
+                and password=#{password}
+            </if>
+            <if test="address != null and address != ''">
+                and address=#{address}
+            </if>
+        </where>
+    </select>
+    
+    <insert id="batchSave" parameterType="list">
+        insert into student (name, address, password) values
+        <foreach collection="list" item="student" separator=",">
+            (#{student.name},#{student.address},#{student.password})
+        </foreach>
+    </insert>
+
+    <select id="findByParams" resultType="User">
+        SELECT * FROM student where name=#{username} AND password=#{password}
+    </select>
 
 </mapper>
