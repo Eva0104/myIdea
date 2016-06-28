@@ -119,7 +119,12 @@ public class UserMapperTest {
 
     @Test
     public void testFindByparams(){
-        SqlSession
+        SqlSession sqlSession = MybatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        User user = userMapper.findByParams("等等","5566");
+
+        sqlSession.close();
     }
 
 

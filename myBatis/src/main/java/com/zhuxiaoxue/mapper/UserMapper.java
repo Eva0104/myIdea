@@ -1,6 +1,7 @@
 package com.zhuxiaoxue.mapper;
 
 import com.zhuxiaoxue.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,8 @@ public interface UserMapper {
 
     List<User> findByQueryParams(Map<String,Object> queryParam);
 
-    User findByParams(String username,String password);
+    //User findByParams(@Param("username") String username  , @Param("password") String password);
+    User findByParams(String username ,String password);
 
     User findById(Integer id);
 
