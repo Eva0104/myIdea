@@ -9,6 +9,14 @@
         SELECT * FROM student WHERE id = #{id}
     </select>
 
+    <select id="findByIds" parameterType="int" resultType="User">
+        SELECT student.*,result.subjectId AS 'result.subjectId' ,subject.name as 'subject.name',result.score AS 'result.score'
+          FROM student
+          INNER JOIN result ON student.id = result.studentId
+          INNER JOIN subject ON result.subjectId = subject.id
+          WHERE student.id = #{id}
+    </select>
+
     <select id="findAll" resultType="User">
         SELECT * FROM student
     </select>
@@ -26,7 +34,7 @@
     </delete>
 
     <select id="findByQueryParams" parameterType="map" resultType="User">
-        SELECT * FROM  student
+        SELECT * FROM student
         <where>
             <if test="username != null and username != ''">
                 name=#{username}
@@ -39,7 +47,7 @@
             </if>
         </where>
     </select>
-    
+
     <insert id="batchSave" parameterType="list">
         insert into student (name, address, password) values
         <foreach collection="list" item="student" separator=",">
@@ -48,8 +56,8 @@
     </insert>
 
     <select id="findByParams" resultType="User">
-        SELECT * FROM  student WHERE name=#{param1} AND password=#{param2}
-       <!-- SELECT * FROM student where name=#{username} AND password=#{password}-->
+        SELECT * FROM student WHERE name=#{param1} AND password=#{param2}
+        <!-- SELECT * FROM student where name=#{username} AND password=#{password}-->
     </select>
 
 </mapper>
