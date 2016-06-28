@@ -3,6 +3,11 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
+
+    <typeAliases>
+        <typeAlias type="com.zhuxiaoxue.pojo.User" alias="User"></typeAlias>
+    </typeAliases>
+
     <environments default="dev">
         <environment id="dev">
             <transactionManager type="JDBC"/>

@@ -3,21 +3,21 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.zhuxiaoxue.mapper.userMapper">
+<mapper namespace="com.zhuxiaoxue.mapper.UserMapper">
 
-    <select id="findById" parameterType="int" resultType="com.zhuxiaoxue.pojo.User">
+    <select id="findById" parameterType="int" resultType="User">
         SELECT * FROM student WHERE id = #{id}
     </select>
 
-    <select id="findAll" resultType="com.zhuxiaoxue.pojo.User">
+    <select id="findAll" resultType="User">
         SELECT * FROM student
     </select>
 
-    <insert id="save" parameterType="com.zhuxiaoxue.pojo.User">
+    <insert id="save" parameterType="User">
         INSERT INTO student (name, address, password) VALUES (#{name},#{address},#{password})
     </insert>
 
-    <update id="update" parameterType="com.zhuxiaoxue.pojo.User">
+    <update id="update" parameterType="User">
         UPDATE student SET name=#{name},address=#{address},password=#{password} WHERE id=#{id}
     </update>
 

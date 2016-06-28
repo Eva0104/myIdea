@@ -21,7 +21,7 @@ public class test {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
             SqlSession sqlSession = sqlSessionFactory.openSession();
 
-            User user = sqlSession.selectOne("com.zhuxiaoxue.mapper.userMapper.findById",1);
+            User user = sqlSession.selectOne("com.zhuxiaoxue.mapper.UserMapper.findById",1);
 
             sqlSession.close();
         } catch (IOException e) {
@@ -36,7 +36,7 @@ public class test {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
             SqlSession sqlSession = sqlSessionFactory.openSession();
 
-            List<User> userList = sqlSession.selectList("com.zhuxiaoxue.mapper.userMapper.findAll");
+            List<User> userList = sqlSession.selectList("com.zhuxiaoxue.mapper.UserMapper.findAll");
             for(User u : userList){
                 System.out.println(u);
             }
@@ -59,7 +59,7 @@ public class test {
             user.setPassword("123456");
             user.setAddress("开封");
 
-            sqlSession.insert("com.zhuxiaoxue.mapper.userMapper.save",user);
+            sqlSession.insert("com.zhuxiaoxue.mapper.UserMapper.save",user);
 
             sqlSession.commit();
             sqlSession.close();
@@ -75,7 +75,7 @@ public class test {
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
             SqlSession sqlSession = sqlSessionFactory.openSession();
 
-            User user = sqlSession.selectOne("com.zhuxiaoxue.mapper.userMapper.findById",4);
+            User user = sqlSession.selectOne("com.zhuxiaoxue.mapper.UserMapper.findById",4);
 
             user.setName("大白");
             user.setPassword("111111");
@@ -94,7 +94,7 @@ public class test {
     public void testDelete(){
             SqlSession sqlSession = MybatisUtil.getSqlSession();
 
-            sqlSession.delete("com.zhuxiaoxue.mapper.userMapper.delete",13);
+            sqlSession.delete("com.zhuxiaoxue.mapper.UserMapper.delete",13);
 
             sqlSession.commit();
             sqlSession.close();

@@ -8,8 +8,8 @@ D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\util\HttpUtil.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\PreviewServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\HttpClientServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\dao\MessageDAO.java
-D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\UserJsonServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\entity\Message.java
+D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\UserJsonServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\util\Config.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\util\DbHelper.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\entity\Document.java
@@ -23,3 +23,4 @@ D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\FileListServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\exception\DataAccessException.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\FileServlet.java
 D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\web\DictServlet.java
+D:\myIdea\ajax\src\main\java\com\zhuxiaoxue\util\EhcacheUtil.java
