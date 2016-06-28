@@ -5,6 +5,8 @@
 
 <mapper namespace="com.zhuxiaoxue.mapper.UserMapper">
 
+    <cache/>
+
     <select id="findById" parameterType="int" resultType="User">
         SELECT * FROM student WHERE id = #{id}
     </select>

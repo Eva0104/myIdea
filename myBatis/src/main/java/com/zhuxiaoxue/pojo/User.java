@@ -1,6 +1,11 @@
 package com.zhuxiaoxue.pojo;
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable{
+
+    private static final long serialVersionUID = -7172070203153127511L;
+
     private Integer id;
     private String name;
     private String address;
