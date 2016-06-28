@@ -6,6 +6,25 @@ public class Result {
     private Integer subjectId;
     private Integer score;
 
+    private User user;
+    private Subject subject;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -36,5 +55,17 @@ public class Result {
 
     public void setScore(Integer score) {
         this.score = score;
+    }
+
+    @Override
+    public String toString() {
+        return "Result{" +
+                "id=" + id +
+                ", studentId=" + studentId +
+                ", subjectId=" + subjectId +
+                ", score=" + score +
+                ", user=" + user +
+                ", subject=" + subject +
+                '}';
     }
 }

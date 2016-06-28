@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhuxiaoxue.mapper.ResultMapper">
+
+    <select id="findById" parameterType="int" resultType="Result" resultMap="ResultMap">
+
+        SELECT result.*,student.name ,student.address ,subject.name AS subName FROM result
+        INNER JOIN student ON result.studentId=student.id
+        INNER JOIN subject ON result.subjectId = subject.id
+        WHERE result.id = #{id}
+
+        <!--SELECT result.*,student.name AS 'user.name',student.address AS 'user.address',subject.name AS 'subject.name' FROM result
+        INNER JOIN student ON result.studentId=student.id
+        INNER JOIN subject ON result.subjectId = subject.id
+        WHERE result.id = #{id}-->
+    </select>
+    <resultMap id="ResultMap" type="com.zhuxiaoxue.pojo.Result">
+        <id column="id" property="id"/>
+        <result column="studentId" property="studentId"/>
+        <result column="subjectId" property="subjectId"/>
+        <result column="score" property="score"/>
+
+        <association property="user" javaType="com.zhuxiaoxue.pojo.User">
+            <id column="id" property="id"/>
+            <result column="name" property="name"/>
+            <result column="address" property="address"/>
+            <result column="password" property="password"/>
+        </association>
+
+        <association property="subject" javaType="com.zhuxiaoxue.pojo.Subject">
+            <id column="id" property="id"/>
+            <result column="subName" property="name"/>
+            <result column="classHour" property="classHour"/>
+        </association>
+    </resultMap>
+
+</mapper>

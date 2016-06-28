@@ -6,25 +6,6 @@ public class User {
     private String address;
     private String password;
 
-    private Subject subject;
-    private Result result;
-
-    public Subject getSubject() {
-        return subject;
-    }
-
-    public void setSubject(Subject subject) {
-        this.subject = subject;
-    }
-
-    public Result getResult() {
-        return result;
-    }
-
-    public void setResult(Result result) {
-        this.result = result;
-    }
-
     public User() {
     }
 

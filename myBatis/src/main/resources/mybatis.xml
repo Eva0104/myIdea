@@ -6,6 +6,7 @@
 
     <typeAliases>
         <typeAlias type="com.zhuxiaoxue.pojo.User" alias="User"></typeAlias>
+        <typeAlias type="com.zhuxiaoxue.pojo.Result" alias="Result"></typeAlias>
     </typeAliases>
 
     <environments default="dev">
@@ -22,5 +23,6 @@
 
     <mappers>
         <mapper resource="mapper/userMapper.xml"/>
+        <mapper resource="mapper/ResultMapper.xml"/>
     </mappers>
 </configuration>

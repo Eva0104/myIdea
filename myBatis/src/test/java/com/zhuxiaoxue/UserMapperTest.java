@@ -22,10 +22,7 @@ public class UserMapperTest {
         SqlSession sqlSession = MybatisUtil.getSqlSession();
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
-        List<User> userList =  userMapper.findByIds(1);
-        for(User user : userList){
-            logger.info(user.getResult().getScore());
-        }
+        User user =  userMapper.findById(1);
 
         sqlSession.close();
 
