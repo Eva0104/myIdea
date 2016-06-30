@@ -18,10 +18,11 @@
     <aop:config>
         <aop:aspect ref="myAdvice">
             <aop:pointcut id="myPointCut" expression="execution(* com.zhuxiaoxue.dao..UserDAOImp.*(..))"/>
-            <aop:before method="beforeAdvice" pointcut-ref="myPointCut"/>
-            <aop:after-returning method="afterReturingAdvice" pointcut-ref="myPointCut"/>
-            <aop:after-throwing method="exceptionAdvice" pointcut-ref="myPointCut"/>
-            <aop:after method="finallyAdvice" pointcut-ref="myPointCut"/>
+            <!--<aop:before method="beforeAdvice" pointcut-ref="myPointCut"/>-->
+            <!--<aop:after-returning method="afterReturingAdvice" pointcut-ref="myPointCut" returning="result"/>-->
+            <!--<aop:after-throwing method="exceptionAdvice" pointcut-ref="myPointCut" throwing="e"/>-->
+            <!--<aop:after method="finallyAdvice" pointcut-ref="myPointCut"/>-->
+            <aop:around method="aroundAdvice" pointcut-ref="myPointCut"/>
         </aop:aspect>
     </aop:config>
 

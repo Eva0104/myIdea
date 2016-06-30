@@ -2,7 +2,8 @@ package com.zhuxiaoxue.dao;
 
 public class UserDAOImp2 implements UserDAO {
     @Override
-    public void save() {
+    public Integer save() {
         System.out.println("add.....");
+        return 101;
     }
 }
