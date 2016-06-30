@@ -55,6 +55,6 @@ public class BookService {
                 ", properties=" + properties +
                 ", " +
                 '}');
-        userDAO.sayHello();
+        userDAO.save();
     }
 }

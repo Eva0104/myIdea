@@ -1,8 +1,10 @@
 import com.zhuxiaoxue.dao.UserDAO;
+import com.zhuxiaoxue.dao.UserDAOImp;
+import com.zhuxiaoxue.dao.UserDAOImp2;
 import com.zhuxiaoxue.service.BookService;
 import com.zhuxiaoxue.service.UserService;
 import org.junit.Test;
-import org.junit.internal.builders.AllDefaultPossibilitiesBuilder;
+import org.omg.CORBA.Object;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -11,8 +13,8 @@ public class test {
     @Test
     public void testGetUserDAO(){
         ApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
-        UserDAO userDAO = (UserDAO) context.getBean("userDao");
-        userDAO.sayHello();
+        UserDAOImp2 userDAOImp = (UserDAOImp2) context.getBean("userDao");
+        userDAOImp.save();
     }
 
     @Test

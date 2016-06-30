@@ -21,6 +21,6 @@ public class UserService {
 
     public void sayHi(){
         System.out.println("userService sayHi");
-        userDAO.sayHello();
+        userDAO.save();
     }
 }

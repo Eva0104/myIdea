@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
-    <bean id="userDao" class="com.zhuxiaoxue.dao.UserDAO"/>
+    <bean id="userDao" class="com.zhuxiaoxue.dao.UserDAOImp2"/>
+    <bean id="userDAO" class="com.zhuxiaoxue.dao.UserDAOImp"/>
+    <bean id="userService" class="com.zhuxiaoxue.service.UserService">
+        <property name="userDAO" ref="userDAO"/>
+    </bean>
+    <bean id="myAdvice" class="com.zhuxiaoxue.aop.MyAdvice"/>
+
+    <aop:config>
+        <aop:aspect ref="myAdvice">
+            <aop:pointcut id="myPointCut" expression="execution(* com.zhuxiaoxue.dao..UserDAOImp.*(..))"/>
+            <aop:before method="beforeAdvice" pointcut-ref="myPointCut"/>
+            <aop:after-returning method="afterReturingAdvice" pointcut-ref="myPointCut"/>
+            <aop:after-throwing method="exceptionAdvice" pointcut-ref="myPointCut"/>
+            <aop:after method="finallyAdvice" pointcut-ref="myPointCut"/>
+        </aop:aspect>
+    </aop:config>
 
     <!--构造方法注入-->
     <!--<bean id="userService" class="com.zhuxiaoxue.service.UserService">-->
@@ -68,10 +86,6 @@
     </bean>
 
 
-
-    <!--<bean id="userService" class="com.zhuxiaoxue.service.UserService">-->
-        <!--<property name="userDAO" ref="userDao"/>-->
-    <!--</bean>-->
 
     <!--
     取别名
