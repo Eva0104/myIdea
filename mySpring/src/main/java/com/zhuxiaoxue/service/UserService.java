@@ -13,6 +13,12 @@ public class UserService {
         this.userDAO = userDAO;
     }
 
+    //构造方法注入
+
+//    public UserService(UserDAO userDAO){
+//        this.userDAO = userDAO;
+//    }
+
     public void sayHi(){
         System.out.println("userService sayHi");
         userDAO.sayHello();

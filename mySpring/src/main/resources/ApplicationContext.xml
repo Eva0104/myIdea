@@ -5,12 +5,73 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="userDao" class="com.zhuxiaoxue.dao.UserDAO" lazy-init="true"/>
+    <bean id="userDao" class="com.zhuxiaoxue.dao.UserDAO"/>
 
+    <!--构造方法注入-->
+    <!--<bean id="userService" class="com.zhuxiaoxue.service.UserService">-->
+        <!--1.构造方法参数的名字-->
+        <!--<constructor-arg name="userDAO" ref="userDao"/>-->
+        <!--2.构造方法参数的索引，索引从零开始-->
+        <!--<constructor-arg index="0" ref="userDao"/>-->
+        <!--3.构造方法的参数类型-->
+        <!--<constructor-arg type="com.zhuxiaoxue.dao.UserDAO" ref="userDao"/>-->
+    <!--</bean>-->
 
-    <bean id="userService" class="com.zhuxiaoxue.service.UserService">
+    <!--自动注入-->
+    <!--
+        1.byName 根据setxxx()方法的xxx部分从spring容器中获取对象并自动注入到当前类
+        <bean id="userDAO" class="com.zhuxiaoxue.dao.UserDAO"/>
+        <bean id="userService" class="com.zhuxiaoxue.service.UserService" autowire="byName"/>
+    -->
+
+    <!--
+        2.byType 根据set方法参数的类型从spring容器中查找符合的对象，如果容器中有一个以上的Bean符合类型，将抛出异常
+        <bean id="userService" class="com.zhuxiaoxue.service.UserService" autowire="byType"/>
+    -->
+    <!--
+        3.constructor 根据构造方法中参数的名字，在容器中查找对象，如果没有找到，再根据参数类型查找
+        <bean id="userService" class="com.zhuxiaoxue.service.UserService" autowire="constructor"/>
+    -->
+
+    <!--set注入-->
+
+    <bean id="bookService" class="com.zhuxiaoxue.service.BookService">
+        <property name="bookName" value="甄嬛传"/>
+        <property name="lits">
+            <list>
+                <value>甄嬛</value>
+                <value>华妃</value>
+                <value>皇后</value>
+            </list>
+        </property>
+        <property name="maps">
+            <map>
+                <entry key="甄嬛" value="孙俪"/>
+                <entry key="华妃" value="蒋欣"/>
+                <entry key="皇后" value="XXX"/>
+            </map>
+        </property>
+        <property name="num" value="100"/>
+        <property name="properties">
+            <props>
+                <prop key="k1">v1</prop>
+                <prop key="k2">v2</prop>
+            </props>
+        </property>
+        <property name="sets">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+            </set>
+        </property>
         <property name="userDAO" ref="userDao"/>
     </bean>
+
+
+
+    <!--<bean id="userService" class="com.zhuxiaoxue.service.UserService">-->
+        <!--<property name="userDAO" ref="userDao"/>-->
+    <!--</bean>-->
 
     <!--
     取别名
