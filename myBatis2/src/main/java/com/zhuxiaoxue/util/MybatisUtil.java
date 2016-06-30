@@ -12,7 +12,7 @@ public class MybatisUtil {
 
     private static SqlSessionFactory sqlSessionFactory = creatSqlSessionFactory();
 
-        private static SqlSessionFactory creatSqlSessionFactory(){
+    private static SqlSessionFactory creatSqlSessionFactory() {
         try {
             Reader reader = Resources.getResourceAsReader("myBatis.xml");
             SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
@@ -30,5 +30,10 @@ public class MybatisUtil {
         return getSqlSessionFactory().openSession();
 
     }
+
+
+//    public static SqlSession getSqlSession(){
+//        return sqlSessionFactory.openSession();
+//     }
 
 }

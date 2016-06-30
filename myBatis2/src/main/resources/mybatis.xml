@@ -5,6 +5,7 @@
     <typeAliases>
         <typeAlias type="com.zhuxiaoxue.pojo.Node" alias="Node"/>
         <typeAlias type="com.zhuxiaoxue.pojo.User" alias="User"/>
+        <typeAlias type="com.zhuxiaoxue.pojo.Topic" alias="Topic"/>
     </typeAliases>
 
     <environments default="dev">
@@ -22,5 +23,6 @@
     <mappers>
         <mapper resource="mapper/NodeMapper.xml"/>
         <mapper resource="mapper/UserMapper.xml"/>
+        <mapper resource="mapper/TopicMapper.xml"/>
     </mappers>
 </configuration>

@@ -18,4 +18,13 @@
         (#{username},#{password},#{email},#{avatar},#{createtime},#{loginip},#{logintime},#{state})
     </insert>
 
+    <update id="update" parameterType="User">
+        UPDATE t_user SET password=#{password},email=#{email},avatar=#{avatar},loginip=#{loginip},logintime=#{logintime},state=#{state}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM t_user WHERE id=#{id}
+    </delete>
+
 </mapper>

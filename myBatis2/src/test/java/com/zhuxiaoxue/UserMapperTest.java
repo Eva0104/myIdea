@@ -20,6 +20,7 @@ public class UserMapperTest {
 
         sqlSession.close();
     }
+
     @Test
     public void testFindByParams(){
         SqlSession sqlSession = MybatisUtil.getSqlSession();
@@ -36,12 +37,37 @@ public class UserMapperTest {
         UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
 
         User user = new User();
-        user.setUsername("Eric");
-        user.setPassword("000000");
-        user.setEmail("342030831@qq.com");
+        user.setUsername("123123");
+        user.setPassword("123123");
+        user.setEmail("123123");
 
         userMapper.save(user);
 
+        sqlSession.commit();
+        sqlSession.close();
+    }
+
+    @Test
+    public void testUpdate(){
+        SqlSession sqlSession = MybatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        User user = userMapper.findById(17);
+        user.setPassword("111111");
+
+        userMapper.update(user);
+
+        sqlSession.commit();
+        sqlSession.close();
+
+    }
+
+    @Test
+    public void testDelete(){
+        SqlSession sqlSession = MybatisUtil.getSqlSession();
+        UserMapper userMapper = sqlSession.getMapper(UserMapper.class);
+
+        userMapper.delete(17);
         sqlSession.commit();
         sqlSession.close();
     }

@@ -4,6 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.zhuxiaoxue.mapper.UserMapper">
+    <cache/>
 
     <select id="findById" parameterType="int" resultType="User">
         SELECT * FROM t_user WHERE id=#{id}
@@ -20,6 +21,11 @@
 
     <update id="update" parameterType="User">
         UPDATE t_user SET password=#{password},email=#{email},avatar=#{avatar},loginip=#{loginip},logintime=#{logintime},state=#{state}
+        WHERE id=#{id}
     </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM t_user WHERE id=#{id}
+    </delete>
 
 </mapper>
