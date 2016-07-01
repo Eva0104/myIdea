@@ -1,6 +1,6 @@
 package com.zhuxiaoxue.service;
 
-
+import com.zhuxiaoxue.pojo.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -16,7 +16,12 @@ public class UserServiceTest {
     private UserService userService;
 
     @Test
-    public void testLogin(){
-        userService.login("甄嬛","000000","3.1.1.1");
+    public void testSave(){
+        User user = new User();
+        user.setName("番薯");
+        user.setPassword("101010");
+        user.setAddress("大地");
+
+        userService.save(user);
     }
 }

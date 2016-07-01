@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhuxiaoxue.mapper.UserMapper">
+
+    <insert id="save" parameterType="User">
+        INSERT INTO student (name, address, password) VALUES (#{name},#{address},#{password});
+    </insert>
+
+    <select id="findById" parameterType="int" resultType="User">
+        select * from student WHERE id=#{id};
+    </select>
+
+</mapper>
