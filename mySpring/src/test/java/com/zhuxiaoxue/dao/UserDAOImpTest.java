@@ -1,6 +1,7 @@
 package com.zhuxiaoxue.dao;
 
 import com.zhuxiaoxue.pojo.User;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -33,9 +34,9 @@ public class UserDAOImpTest {
     @Test
     public void testUpdate(){
         User user = userDAO.findById(14);
-        user.setName("皇后");
-        user.setAddress("后宫");
-        user.setPassword("111111");
+        user.setName("皇后2");
+        user.setAddress("后宫2");
+        user.setPassword("222222");
 
         userDAO.update(user);
     }

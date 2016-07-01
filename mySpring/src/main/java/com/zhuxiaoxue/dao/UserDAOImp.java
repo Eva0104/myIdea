@@ -43,6 +43,7 @@ public class UserDAOImp implements UserDAO {
 //            @Override
 //            public User mapRow(ResultSet resultSet, int i) throws SQLException {
 //                User user = new User();
+//                user.setId(resultSet.getInt("id"));
 //                user.setName(resultSet.getString("name"));
 //                user.setPassword(resultSet.getString("password"));
 //                user.setAddress(resultSet.getString("address"));
