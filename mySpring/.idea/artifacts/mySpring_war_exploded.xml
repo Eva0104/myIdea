@@ -22,6 +22,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-aspects:4.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjweaver:1.8.9" />
           <element id="library" level="project" name="Maven: org.springframework:spring-test:4.2.6.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

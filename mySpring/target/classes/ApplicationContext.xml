@@ -2,117 +2,20 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop
-        http://www.springframework.org/schema/aop/spring-aop.xsd">
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--基于注解的Bean管理和DI-->
+    <context:component-scan base-package="com.zhuxiaoxue"/>
 
-    <bean id="userDao" class="com.zhuxiaoxue.dao.UserDAOImp2"/>
-    <bean id="userDAO" class="com.zhuxiaoxue.dao.UserDAOImp"/>
-    <bean id="userService" class="com.zhuxiaoxue.service.UserService">
-        <property name="userDAO" ref="userDAO"/>
-    </bean>
-    <bean id="myAdvice" class="com.zhuxiaoxue.aop.MyAdvice"/>
+    <!--基于注解的AOP-->
+    <aop:aspectj-autoproxy/>
 
-    <aop:config>
-        <aop:aspect ref="myAdvice">
-            <aop:pointcut id="myPointCut" expression="execution(* com.zhuxiaoxue.dao..UserDAOImp.*(..))"/>
-            <!--<aop:before method="beforeAdvice" pointcut-ref="myPointCut"/>-->
-            <!--<aop:after-returning method="afterReturingAdvice" pointcut-ref="myPointCut" returning="result"/>-->
-            <!--<aop:after-throwing method="exceptionAdvice" pointcut-ref="myPointCut" throwing="e"/>-->
-            <!--<aop:after method="finallyAdvice" pointcut-ref="myPointCut"/>-->
-            <aop:around method="aroundAdvice" pointcut-ref="myPointCut"/>
-        </aop:aspect>
-    </aop:config>
-
-    <!--构造方法注入-->
-    <!--<bean id="userService" class="com.zhuxiaoxue.service.UserService">-->
-        <!--1.构造方法参数的名字-->
-        <!--<constructor-arg name="userDAO" ref="userDao"/>-->
-        <!--2.构造方法参数的索引，索引从零开始-->
-        <!--<constructor-arg index="0" ref="userDao"/>-->
-        <!--3.构造方法的参数类型-->
-        <!--<constructor-arg type="com.zhuxiaoxue.dao.UserDAO" ref="userDao"/>-->
-    <!--</bean>-->
-
-    <!--自动注入-->
-    <!--
-        1.byName 根据setxxx()方法的xxx部分从spring容器中获取对象并自动注入到当前类
-        <bean id="userDAO" class="com.zhuxiaoxue.dao.UserDAO"/>
-        <bean id="userService" class="com.zhuxiaoxue.service.UserService" autowire="byName"/>
-    -->
-
-    <!--
-        2.byType 根据set方法参数的类型从spring容器中查找符合的对象，如果容器中有一个以上的Bean符合类型，将抛出异常
-        <bean id="userService" class="com.zhuxiaoxue.service.UserService" autowire="byType"/>
-    -->
-    <!--
-        3.constructor 根据构造方法中参数的名字，在容器中查找对象，如果没有找到，再根据参数类型查找
-        <bean id="userService" class="com.zhuxiaoxue.service.UserService" autowire="constructor"/>
-    -->
-
-    <!--set注入-->
-
-    <bean id="bookService" class="com.zhuxiaoxue.service.BookService">
-        <property name="bookName" value="甄嬛传"/>
-        <property name="lits">
-            <list>
-                <value>甄嬛</value>
-                <value>华妃</value>
-                <value>皇后</value>
-            </list>
-        </property>
-        <property name="maps">
-            <map>
-                <entry key="甄嬛" value="孙俪"/>
-                <entry key="华妃" value="蒋欣"/>
-                <entry key="皇后" value="XXX"/>
-            </map>
-        </property>
-        <property name="num" value="100"/>
-        <property name="properties">
-            <props>
-                <prop key="k1">v1</prop>
-                <prop key="k2">v2</prop>
-            </props>
-        </property>
-        <property name="sets">
-            <set>
-                <value>set1</value>
-                <value>set2</value>
-            </set>
-        </property>
-        <property name="userDAO" ref="userDao"/>
-    </bean>
-
-
-
-    <!--
-    取别名
-    <alias name="userDao" alias="myDao"/>
-    -->
-
-    <!--
-    name属性
-    <bean name="userDao,myDao" class="com.zhuxiaoxue.dao.UserDAO"/>
-    -->
-
-    <!--
-     init-method定义类中的初始化方法,destroy-method定义销毁方法
-     <bean id="userDao" class="com.zhuxiaoxue.dao.UserDAO" init-method="init" destroy-method="destroy"/>
-    -->
-
-    <!--
-    scope默认值为singleton (默认情况下，Spring容器中的管理的类将会变成单例类，类的对象会在容器启动的时候创建)
-    如果修改为prototype,则每次调用getBean方法的时候会获取一个类的对对象，容器启动时将不会创建该类的对象
-    <bean id="userDao" class="com.zhuxiaoxue.dao.UserDAO" scope="prototype"/>
-    -->
-
-    <!--
-    lazy-init = true,表示在调用getBean的时候再去创建类的对象(称为类的延迟加载)
-    <bean id="userDao" class="com.zhuxiaoxue.dao.UserDAO" lazy-init = "true"/>
-    -->
 
 
 

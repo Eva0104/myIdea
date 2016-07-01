@@ -13,7 +13,7 @@ public class test {
     @Test
     public void testGetUserDAO(){
         ApplicationContext context = new ClassPathXmlApplicationContext("ApplicationContext.xml");
-        UserDAOImp2 userDAOImp = (UserDAOImp2) context.getBean("userDao");
+        UserDAOImp userDAOImp = (UserDAOImp) context.getBean("userDAOImp");
         userDAOImp.save();
     }
 

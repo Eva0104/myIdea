@@ -2,11 +2,14 @@ package com.zhuxiaoxue.service;
 
 import com.zhuxiaoxue.dao.UserDAO;
 
+import javax.inject.Inject;
+import javax.inject.Named;
 import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 import java.util.Set;
 
+@Named
 public class BookService {
 
     private String bookName;
@@ -15,6 +18,8 @@ public class BookService {
     private Map<String,Object> maps;
     private Set<String> sets;
     private Properties properties;
+
+    @Inject
     private UserDAO userDAO;
 
     public void setBookName(String bookName) {
