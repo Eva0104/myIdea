@@ -9,7 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.List;
 
-@Named
+
 public class UserService {
 
     @Inject
