@@ -3,10 +3,22 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+
+
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="minIdle" value="2"/>
+        <property name="maxTotal" value="5"/>
+        <property name="maxWaitMillis" value="10000"/>
+    </bean>
+
+    <!--Spring-data-redis配置-->
+
     <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
         <property name="hostName" value="192.168.184.128"/>
         <property name="port" value="6379"/>
-        <property name="usePool" value="true"/>
+        <!--<property name="usePool" value="true"/>-->
+        <!--连接池可以使用redis自己的-->
+        <property name="poolConfig" ref="poolConfig"/>
     </bean>
 
 
