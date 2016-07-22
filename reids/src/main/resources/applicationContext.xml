@@ -9,8 +9,18 @@
         <property name="usePool" value="true"/>
     </bean>
 
+
+    <bean id="stringRedisSerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer"></bean>
+
+    <bean class="org.springframework.data.redis.core.StringRedisTemplate">
+        <property name="connectionFactory" ref="jedisConnectionFactory"/>
+    </bean>
+
+
     <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
         <property name="connectionFactory" ref="jedisConnectionFactory"/>
+        <!--<property name="hashKeySerializer" ref="stringRedisSerializer"/>-->
+        <!--<property name="valueSerializer" ref="stringRedisSerializer"/>-->
     </bean>
 
 </beans>

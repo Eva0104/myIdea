@@ -1,36 +1,34 @@
 package com.zhuxiaoxue;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:applicationContext.xml")
-public class SpringRedisTestCase {
+public class SpringRedisTemplateTestCase {
 
     @Autowired
-    private RedisTemplate<String,String> redisTemplate;
+    private StringRedisTemplate stringRedisTemplate;
 
     @Test
     public void testSet(){
-        ValueOperations<String,String> valueOperations =  redisTemplate.opsForValue();
-        valueOperations.set("user:1:age","12");
+        stringRedisTemplate.opsForValue().set("user:2:name","jim");
     }
 
     @Test
     public void testGet(){
-        System.out.println(redisTemplate.opsForValue().get("user:1:age"));
+        System.out.println(stringRedisTemplate.opsForValue().get("user:2:name"));
     }
 
     @Test
     public void testIncr(){
-        redisTemplate.opsForValue().increment("user:1:age",2);
+        stringRedisTemplate.opsForValue().increment("user:2:age",1);
+        System.out.println(stringRedisTemplate.opsForValue().get("user:2:age"));
     }
-
-
 
 }
