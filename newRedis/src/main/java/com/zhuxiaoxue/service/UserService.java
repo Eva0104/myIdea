@@ -8,12 +8,18 @@ import io.protostuff.ProtostuffIOUtil;
 import io.protostuff.Schema;
 import io.protostuff.runtime.RuntimeSchema;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 
 @Service
 public class UserService {
+
+
+
 
     @Autowired
     private JedisPool jedisPool;
@@ -49,5 +55,29 @@ public class UserService {
 //        jedis.close();
 //        return user;
     }
+
+
+//    private RedisTemplate<String,User> redisTemplate;
+//
+//    @Autowired
+//    public UserService(RedisTemplate<String,User> redisTemplate){
+//        this.redisTemplate = redisTemplate;
+//        redisTemplate.setKeySerializer(new StringRedisSerializer());
+//        redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer<>(User.class));
+//    }
+//
+//    public void saveUser(User user){
+//        redisTemplate.opsForValue().set(KeyUtil.getKey(user.getId()),user);
+//    }
+//
+//    public User findById(Integer userId){
+//        User user = redisTemplate.opsForValue().get(KeyUtil.getKey(userId));
+//        if(user == null){
+//            //find from db;
+//        }
+//        return user;
+    }
+
+
 
 }

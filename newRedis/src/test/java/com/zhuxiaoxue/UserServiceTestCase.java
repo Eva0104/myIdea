@@ -18,13 +18,13 @@ public class UserServiceTestCase {
 
     @Test
     public void testSave(){
-        User user = new User(101,"eric",99.9F);
+        User user = new User(102,"eric",99.9F);
         userService.saveUser(user);
     }
 
     @Test
     public void testFindById(){
-        User user = userService.findById(2);
+        User user = userService.findById(102);
         System.out.println(user.getName());
     }
 
