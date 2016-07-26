@@ -57,7 +57,7 @@ public class SQLTestCase {
         SQLQuery sqlQuery = session.createSQLQuery(sql).addEntity(User.class);
         sqlQuery.setFirstResult(3);
         sqlQuery.setMaxResults(5);
-        
+
         List<User> userList = sqlQuery.list();
 
         for(User user : userList){
