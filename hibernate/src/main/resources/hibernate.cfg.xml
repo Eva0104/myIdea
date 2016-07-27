@@ -32,16 +32,16 @@
         <property name="cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
 
         <!--映射文件-->
-       <mapping resource="hbm/User.hbm.xml"/>
-       <mapping resource="hbm/Dept.hbm.xml"/>
-       <mapping resource="hbm/Employee.hbm.xml"/>
-       <mapping resource="hbm/Person.hbm.xml"/>
-       <mapping resource="hbm/Card.hbm.xml"/>
-       <mapping resource="hbm/Topic.hbm.xml"/>
-       <mapping resource="hbm/TopicContent.hbm.xml"/>
-       <mapping resource="hbm/Student.hbm.xml"/>
-       <mapping resource="hbm/Teacher.hbm.xml"/>
-       <mapping resource="hbm/Task.hbm.xml"/>
+        <mapping class="com.zhuxiaoxue.pojo.Dept"/>
+        <mapping class="com.zhuxiaoxue.pojo.Employee"/>
+        <mapping class="com.zhuxiaoxue.pojo.Teacher"/>
+        <mapping class="com.zhuxiaoxue.pojo.Student"/>
+        <mapping class="com.zhuxiaoxue.pojo.Topic"/>
+        <mapping class="com.zhuxiaoxue.pojo.TopicContent"/>
+        <mapping class="com.zhuxiaoxue.pojo.Person"/>
+        <mapping class="com.zhuxiaoxue.pojo.Card"/>
+        <mapping class="com.zhuxiaoxue.pojo.Task"/>
+
 
     </session-factory>
 </hibernate-configuration>

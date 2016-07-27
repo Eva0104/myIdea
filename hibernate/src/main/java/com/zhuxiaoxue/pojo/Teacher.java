@@ -1,12 +1,18 @@
 package com.zhuxiaoxue.pojo;
 
+import javax.persistence.*;
 import java.util.Set;
 
+@Entity
+@Table(name="t_teacher")
 public class Teacher {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String teaname;
 
+    @ManyToMany(mappedBy = "teacherSet")
     private Set<Student> studentSet;
 
     public Integer getId() {

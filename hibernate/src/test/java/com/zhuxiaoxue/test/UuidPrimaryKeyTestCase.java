@@ -2,7 +2,7 @@ package com.zhuxiaoxue.test;
 
 import com.zhuxiaoxue.pojo.Task;
 import com.zhuxiaoxue.util.HibernateUtil;
-import org.hibernate.Cache;
+import org.hibernate.LockOptions;
 import org.hibernate.Session;
 import org.junit.Test;
 
@@ -18,6 +18,51 @@ public class UuidPrimaryKeyTestCase {
 
         session.save(task);
         session.getTransaction().commit();
+    }
+
+    @Test
+    public void testUpdate() throws InterruptedException {
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+
+        Task task = (Task) session.get(Task.class,"40283881562bc1e601562bc1e9110000");
+
+        task.setTitle("103");
+
+        Thread.sleep(10000);
+
+        session.getTransaction().commit();
+    }
+
+    //悲观锁
+    @Test
+    public void testUpdate2() throws InterruptedException {
+        Session session1 = HibernateUtil.getSession();
+        session1.beginTransaction();
+
+        Task task = (Task) session1.get(Task.class,"40283881562bc1e601562bc1e9110000", LockOptions.UPGRADE);
+
+        task.setTitle("108");
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Session session2 = HibernateUtil.getSession();
+                session2.beginTransaction();
+
+                Task task2 = (Task) session2.get(Task.class,"40283881562bc1e601562bc1e9110000");
+
+                task2.setTitle("V-102");
+
+                session2.getTransaction().commit();
+            }
+        });
+
+        thread.start();
+
+        Thread.sleep(5000);
+
+        session1.getTransaction().commit();
     }
 
     @Test

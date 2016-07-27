@@ -41,7 +41,7 @@ public class ManyToOneTestCase {
         Session session = HibernateUtil.getSession();
         session.beginTransaction();
 
-        Dept dept = (Dept) session.get(Dept.class,16);
+        Dept dept = (Dept) session.get(Dept.class,18);
 
         Set<Employee> employeeSet = dept.getEmployeeSet();
         for(Employee employee : employeeSet){
