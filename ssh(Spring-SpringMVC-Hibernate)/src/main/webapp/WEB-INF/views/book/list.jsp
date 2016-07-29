@@ -17,21 +17,24 @@
     </c:if>
     <form class="form-inline" action="">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="书籍名称" name="bookname" value="${bookname}">
+            <input type="text" class="form-control" placeholder="书籍名称或作者" name="q_s_like_bookname_or_bookauthor" value="${q_s_like_bookname_or_bookauthor}">
         </div>
         <div class="form-group">
-            <select name="type" class="form-control">
+            <input type="text" class="form-control" placeholder="最低价格" name="q_f_ge_bookprice" value="${q_f_ge_bookprice}"> - <input type="text" class="form-control" placeholder="最高价格" name="q_f_le_bookprice" value="${q_f_le_bookprice}">
+        </div>
+        <div class="form-group">
+            <select name="q_i_eq_booktype.id" class="form-control">
                 <option value="">请选择类别</option>
-                <c:forEach items="${bookTypeList}" var="type">
-                    <option value="${type.id}" ${type.id == typeid ? 'selected' : '' }>${type.booktype}</option>
+                <c:forEach items="${booktypeList}" var="type">
+                    <option value="${type.id}" ${requestScope['q_i_eq_booktype.id'] == type.id ? 'selected' : '' }>${type.booktype}</option>
                 </c:forEach>
             </select>
         </div>
         <div class="form-group">
-            <select name="pub" class="form-control">
+            <select name="q_i_eq_publisher.id" class="form-control">
                 <option value="">请选择出版社</option>
-                <c:forEach items="${bookPubList}" var="pub">
-                    <option value="${pub.id}" ${pub.id == pubid ? 'selected' : '' }>${pub.pubname}</option>
+                <c:forEach items="${publisherList}" var="pub">
+                    <option value="${pub.id}" ${requestScope['q_i_eq_publisher.id'] == pub.id ? 'selected' : '' }>${pub.pubname}</option>
                 </c:forEach>
             </select>
         </div>
@@ -51,7 +54,7 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${bookList}" var="book">
+        <c:forEach items="${page.items}" var="book">
             <tr>
                 <td>${book.bookname}</td>
                 <td>${book.bookauthor}</td>
@@ -80,8 +83,8 @@
                 prev: '<<',
                 next: '>>',
                 last: '末页',
-                visiblePages: 10,
-                href: '?bookname=' + encodeURIComponent('${bookname}') + '&type=${typeid}&pub=${pubid}&p={{number}}'
+                visiblePages: 5,
+                href: '?&p={{number}}&q_s_like_bookname_or_bookauthor=${q_s_like_bookname_or_bookauthor}&q_f_ge_bookprice=${q_f_ge_bookprice}&q_f_le_bookprice=${q_f_le_bookprice}&q_i_eq_booktype.id=${requestScope['q_i_eq_booktype.id']}&q_i_eq_booktype.id=${requestScope['q_i_eq_booktype.id']}'
             })
         });
     });

@@ -10,17 +10,6 @@ import javax.inject.Named;
 import java.util.List;
 
 @Named
-public class BooktypeDAO {
+public class BooktypeDAO extends BaseDAO<Booktype,Integer>{
 
-    @Inject
-    private SessionFactory sessionFactory;
-
-    private Session getSession(){
-        return sessionFactory.getCurrentSession();
-    }
-
-    public List<Booktype> findAll(){
-        Criteria criteria = getSession().createCriteria(Booktype.class);
-        return criteria.list();
-    }
 }

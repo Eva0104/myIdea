@@ -10,17 +10,6 @@ import javax.inject.Named;
 import java.util.List;
 
 @Named
-public class PublisherDAO {
+public class PublisherDAO extends BaseDAO<Publisher,Integer>{
 
-    @Inject
-    private SessionFactory sessionFactory;
-
-    private Session getSession(){
-        return sessionFactory.getCurrentSession();
-    }
-
-    public List<Publisher> findAll(){
-        Criteria criteria = getSession().createCriteria(Publisher.class);
-        return criteria.list();
-    }
 }

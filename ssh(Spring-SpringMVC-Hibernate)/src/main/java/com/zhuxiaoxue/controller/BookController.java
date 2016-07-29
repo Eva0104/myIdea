@@ -4,14 +4,17 @@ import com.zhuxiaoxue.pojo.Book;
 import com.zhuxiaoxue.pojo.Booktype;
 import com.zhuxiaoxue.pojo.Publisher;
 import com.zhuxiaoxue.service.BookService;
+import com.zhuxiaoxue.util.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
@@ -22,10 +25,18 @@ public class BookController {
     private BookService bookService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public String list(Model model){
+    public String list(Model model,
+                       @RequestParam(name = "p",required = false,defaultValue = "1")Integer pageNo,
+                       HttpServletRequest request){
 
-        List<Book> bookList = bookService.findAllBook();
-        model.addAttribute("bookList",bookList);
+        Page<Book> page = bookService.findBookByParam(pageNo,request);
+
+        List<Booktype> booktypeList = bookService.findAllBooktype();
+        List<Publisher> publisherList = bookService.findAllPublisher();
+
+        model.addAttribute("booktypeList",booktypeList);
+        model.addAttribute("publisherList",publisherList);
+        model.addAttribute("page",page);
         return "/book/list";
     }
 
