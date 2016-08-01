@@ -5,7 +5,7 @@ import com.zhuxiaoxue.pojo.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserAction {
+public class UserAction extends BaseAction{
 
 //    private String username;
 //    private String address;

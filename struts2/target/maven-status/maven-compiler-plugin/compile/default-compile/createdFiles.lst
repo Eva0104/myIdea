@@ -1,3 +1,5 @@
+com\zhuxiaoxue\action\BaseAction.class
 com\zhuxiaoxue\action\HomeAction.class
 com\zhuxiaoxue\action\UserAction.class
 com\zhuxiaoxue\pojo\User.class
+com\zhuxiaoxue\intercptor\MyTimerIntercptor.class

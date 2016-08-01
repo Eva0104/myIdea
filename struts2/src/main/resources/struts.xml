@@ -4,7 +4,6 @@
         "http://struts.apache.org/dtds/struts-2.3.dtd">
 
 
-
 <struts>
     <!--修改后缀名-->
     <!--<constant name="struts.properties" value="do,action"/>-->
@@ -16,7 +15,7 @@
         -->
         <action name="home" class="com.zhuxiaoxue.action.HomeAction">
             <!--
-                name : Action中方法的返回值
+                name : Action中方法的返回值,如果是success則可以省略不写
             -->
             <result name="success">/WEB-INF/views/home.jsp</result>
         </action>
@@ -24,6 +23,25 @@
     </package>
 
     <package name="userPackage" namespace="/user" extends="struts-default">
+        
+        <interceptors>
+            <interceptor name="myTimer"  class="com.zhuxiaoxue.intercptor.MyTimerIntercptor"/>
+
+            <interceptor-stack name="myStack">
+                <interceptor-ref name="defaultStack"/>
+                <interceptor-ref name="myTimer"/>
+            </interceptor-stack>
+        </interceptors>
+
+        <!--<interceptors>-->
+            <!--<interceptor-stack name="myIntercptor">-->
+                <!--<interceptor-ref name="defaultStack"/>-->
+                <!--<interceptor-ref name="timer"/>-->
+            <!--</interceptor-stack>-->
+        <!--</interceptors>-->
+
+        <default-interceptor-ref name="myStack"/>
+
 
         <action name="new" class="com.zhuxiaoxue.action.UserAction" method="toSave">
             <result name="success">/WEB-INF/views/user/new.jsp</result>
@@ -34,9 +52,11 @@
         </action>
 
         <action name="save" class="com.zhuxiaoxue.action.UserAction" method="save">
-            <result name="success" type="redirectAction">/user/list</result>
+            <result name="success" type="redirectAction">
+                <param name="actionName">list</param>
+                <param name="package">/user</param>
+            </result>
         </action>
-
     </package>
 
 </struts>
