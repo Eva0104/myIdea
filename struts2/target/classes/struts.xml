@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+
+<struts>
+    <!--修改后缀名-->
+    <!--<constant name="struts.properties" value="do,action"/>-->
+
+    <package name="myPackage" extends="struts-default">
+        <!--
+            name : url中请求的名字
+            class : Action类的完全限定名
+        -->
+        <action name="home" class="com.zhuxiaoxue.action.HomeAction">
+            <!--
+                name : Action中方法的返回值
+            -->
+            <result name="success">/WEB-INF/views/home.jsp</result>
+        </action>
+
+    </package>
+
+    <package name="userPackage" namespace="/user" extends="struts-default">
+
+        <action name="new" class="com.zhuxiaoxue.action.UserAction" method="toSave">
+            <result name="success">/WEB-INF/views/user/new.jsp</result>
+        </action>
+
+        <action name="list" class="com.zhuxiaoxue.action.UserAction" method="list">
+            <result name="success">/WEB-INF/views/user/list.jsp</result>
+        </action>
+
+        <action name="save" class="com.zhuxiaoxue.action.UserAction" method="save">
+            <result name="success" type="redirectAction">/user/list</result>
+        </action>
+
+    </package>
+
+</struts>
