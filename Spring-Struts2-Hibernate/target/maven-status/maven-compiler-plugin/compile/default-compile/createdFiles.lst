@@ -1,0 +1,13 @@
+com\zhuxiaoxue\util\Page.class
+com\zhuxiaoxue\dao\PublisherDAO.class
+com\zhuxiaoxue\pojo\Booktype.class
+com\zhuxiaoxue\dao\BaseDAO.class
+com\zhuxiaoxue\util\SearchParam.class
+com\zhuxiaoxue\service\BookService.class
+com\zhuxiaoxue\action\BookAction.class
+com\zhuxiaoxue\dao\BookDAO.class
+com\zhuxiaoxue\util\Strings.class
+com\zhuxiaoxue\action\BaseAction.class
+com\zhuxiaoxue\dao\BooktypeDAO.class
+com\zhuxiaoxue\pojo\Publisher.class
+com\zhuxiaoxue\pojo\Book.class

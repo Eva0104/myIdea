@@ -5,45 +5,30 @@
 
 
 <struts>
-    <!--修改后缀名-->
-    <!--<constant name="struts.properties" value="do,action"/>-->
 
     <package name="myPackage" extends="struts-default">
-        <!--
-            name : url中请求的名字
-            class : Action类的完全限定名
-        -->
+
         <action name="home" class="com.zhuxiaoxue.action.HomeAction">
-            <!--
-                name : Action中方法的返回值
-            -->
+
             <result name="success">/WEB-INF/views/home.jsp</result>
         </action>
 
     </package>
 
     <package name="userPackage" namespace="/user" extends="struts-default">
-        
         <interceptors>
-            <interceptor name="myTimer"  class="com.zhuxiaoxue.intercptor.MyTimerIntercptor"/>
+            <interceptor name="myLoginStack" class="com.zhuxiaoxue.intercptor.LoginIntercptor"/>
 
             <interceptor-stack name="myStack">
                 <interceptor-ref name="defaultStack"/>
-                <interceptor-ref name="myTimer"/>
+                <interceptor-ref name="myLoginStack"/>
             </interceptor-stack>
         </interceptors>
-
-        <!--<interceptors>-->
-            <!--<interceptor-stack name="myIntercptor">-->
-                <!--<interceptor-ref name="defaultStack"/>-->
-                <!--<interceptor-ref name="timer"/>-->
-            <!--</interceptor-stack>-->
-        <!--</interceptors>-->
 
         <default-interceptor-ref name="myStack"/>
 
 
-        <action name="new" class="com.zhuxiaoxue.action.UserAction" method="toSave">
+        <action name="index" class="com.zhuxiaoxue.action.UserAction" method="toSave">
             <result name="success">/WEB-INF/views/user/new.jsp</result>
         </action>
 
@@ -51,10 +36,13 @@
             <result name="success">/WEB-INF/views/user/list.jsp</result>
         </action>
 
-        <action name="save" class="com.zhuxiaoxue.action.UserAction" method="save">
-            <result name="success" type="redirectAction">
+        <action name="login" class="com.zhuxiaoxue.action.UserAction" method="login">
+            <result type="redirectAction">
                 <param name="actionName">list</param>
-                <param name="package">/user</param>
+            </result>
+            <result type="redirectAction">
+                <param name="actionName">index</param>
+                <param name="code">${code}</param>
             </result>
         </action>
     </package>

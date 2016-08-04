@@ -2,17 +2,18 @@ package com.zhuxiaoxue.action;
 
 import com.zhuxiaoxue.pojo.User;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserAction extends BaseAction{
 
-//    private String username;
-//    private String address;
 
     private User user;
 
     private List<String> names;
+
+    private String code;
 
     public String toSave(){
         System.out.println("User save ...");
@@ -20,8 +21,6 @@ public class UserAction extends BaseAction{
     }
 
     public String save(){
-//        System.out.println("username" + username);
-//        System.out.println("address" + address);
 
         System.out.println("username" + user.getUsername());
         System.out.println("address" + user.getAddress());
@@ -37,26 +36,18 @@ public class UserAction extends BaseAction{
         return "success";
     }
 
+    public String login(){
+        if("tom".equals(user.getUsername()) && "123".equals(user.getAddress())){
+            HttpSession session = getHttpSession();
+            session.setAttribute("curr_user",user.getUsername());
+            return SUCCESS;
+        }else {
+            code = "10009";
+            return INPUT;
+        }
+    }
+
     //get set
-
-
-//    public String getUsername() {
-//        return username;
-//    }
-//
-//    public void setUsername(String username) {
-//        this.username = username;
-//    }
-//
-//    public String getAddress() {
-//        return address;
-//    }
-//
-//    public void setAddress(String address) {
-//        this.address = address;
-//    }
-
-
     public User getUser() {
         return user;
     }

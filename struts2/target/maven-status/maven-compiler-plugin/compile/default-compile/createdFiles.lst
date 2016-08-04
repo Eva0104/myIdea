@@ -1,4 +1,5 @@
 com\zhuxiaoxue\action\BaseAction.class
+com\zhuxiaoxue\intercptor\LoginIntercptor.class
 com\zhuxiaoxue\action\HomeAction.class
 com\zhuxiaoxue\action\UserAction.class
 com\zhuxiaoxue\pojo\User.class
